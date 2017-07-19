@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.Stack;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity {
 
 	protected static Stack<Double> numStack = new Stack<>();
 	protected static Stack<Character> opStack = new Stack<>();
@@ -22,12 +22,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		setContentView(R.layout.activity_main);
 	}
 
-	public void numBtnHandler(View v, char num) {
-
-	}
-
-	@Override
-	public void onClick(View view) {
+	public void onNumClick(View view) {
 		switch (view.getId()) {
 			case R.id.zeroBTN:
 				tempStr = tempStr.concat("0");
@@ -61,5 +56,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				tempStr = tempStr.concat("9");
 				break;
 		}
+	}
+
+	public void onOprClick(View v) {
+
 	}
 }
