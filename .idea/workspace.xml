@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AndroidLayouts">
     <shared>
       <config>
@@ -30,7 +33,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
     </list>
     <ignored path="GVcalc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,27 +65,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1827">
-              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+            <state relative-caret-position="247">
+              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+              <folding>
+                <element signature="e#1389#1401#0" expanded="true" />
+                <element signature="e#1577#1589#0" expanded="true" />
+                <element signature="e#1950#1963#0" expanded="true" />
+                <element signature="e#2431#2443#0" expanded="true" />
+                <element signature="e#2617#2629#0" expanded="true" />
+                <element signature="e#2808#2826#0" expanded="true" />
+                <element signature="e#3106#3118#0" expanded="true" />
+                <element signature="e#3292#3304#0" expanded="true" />
+                <element signature="e#3480#3492#0" expanded="true" />
+                <element signature="e#3667#3681#0" expanded="true" />
+                <element signature="e#3963#3978#0" expanded="true" />
+                <element signature="e#4153#4165#0" expanded="true" />
+                <element signature="e#4339#4355#0" expanded="true" />
+                <element signature="e#4531#4546#0" expanded="true" />
+                <element signature="e#4832#4851#0" expanded="true" />
+                <element signature="e#5032#5052#0" expanded="true" />
+                <element signature="e#5228#5243#0" expanded="true" />
+                <element signature="e#5418#5432#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="60" column="26" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="26" />
+            <state relative-caret-position="-285">
+              <caret line="33" column="113" selection-start-line="33" selection-start-column="113" selection-end-line="33" selection-end-column="113" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1941,8 +1971,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2415,7 +2446,21 @@
       <option name="project" value="LOCAL" />
       <updated>1500443244403</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Created separate event handlers for number and operator buttons.">
+      <created>1500444489051</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1500444489051</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Partially implemented event handlers for buttons.">
+      <created>1500529662402</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1500529662402</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2498,21 +2543,22 @@
     <MESSAGE value="(More) Layout adjustments." />
     <MESSAGE value="(Even more) Layout adjustments." />
     <MESSAGE value="Started button implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started button implementation." />
+    <MESSAGE value="Created separate event handlers for number and operator buttons." />
+    <MESSAGE value="Partially implemented event handlers for buttons." />
+    <option name="LAST_COMMIT_MESSAGE" value="Partially implemented event handlers for buttons." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="10" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="14" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="numStack" custom="com.vargo.geoff.gvcalc.MainActivity" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
@@ -2522,7 +2568,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4832#4851#0" expanded="true" />
+            <element signature="e#5032#5052#0" expanded="true" />
+            <element signature="e#5228#5243#0" expanded="true" />
+            <element signature="e#5418#5432#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2532,7 +2597,6 @@
           <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2544,7 +2608,26 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4832#4851#0" expanded="true" />
+            <element signature="e#5032#5052#0" expanded="true" />
+            <element signature="e#5228#5243#0" expanded="true" />
+            <element signature="e#5418#5432#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2554,7 +2637,6 @@
           <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2566,7 +2648,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4832#4851#0" expanded="true" />
+            <element signature="e#5032#5052#0" expanded="true" />
+            <element signature="e#5228#5243#0" expanded="true" />
+            <element signature="e#5418#5432#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2576,7 +2677,6 @@
           <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2613,14 +2713,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/os/Looper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="26" />
+        <state relative-caret-position="80">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#644#645#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/os/MessageQueue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2629,9 +2744,38 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1827">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="247">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4832#4851#0" expanded="true" />
+            <element signature="e#5032#5052#0" expanded="true" />
+            <element signature="e#5228#5243#0" expanded="true" />
+            <element signature="e#5418#5432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="33" column="113" selection-start-line="33" selection-start-column="113" selection-end-line="33" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

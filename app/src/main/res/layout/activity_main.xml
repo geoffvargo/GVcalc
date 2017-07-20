@@ -9,7 +9,7 @@
 
 	<ScrollView
 		android:id="@+id/calcDisplay"
-		android:layout_width="0dp"
+		android:layout_width="match_parent"
 		android:layout_height="350dp"
 		app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"
 		app:layout_constraintLeft_toRightOf="parent"
@@ -18,8 +18,8 @@
 		<TextView
 			android:id="@+id/dispTXT"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text=""/>
+			android:layout_height="match_parent"
+			/>
 	</ScrollView>
 	<TableLayout
 		android:id="@+id/calcKeyboard"
@@ -56,7 +56,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onOprClick"
-				android:text="@string/plus"/>
+				android:text="@string/div"/>
 		</TableRow>
 		<TableRow
 			android:layout_width="match_parent"
@@ -94,25 +94,25 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onNumClick"
-				android:text="1"/>
+				android:text="@string/_1"/>
 			<Button
 				android:id="@+id/twoBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onNumClick"
-				android:text="2"/>
+				android:text="@string/_2"/>
 			<Button
 				android:id="@+id/threeBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onNumClick"
-				android:text="3"/>
+				android:text="@string/_3"/>
 			<Button
 				android:id="@+id/plusBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onOprClick"
-				android:text="+"/>
+				android:text="@string/plus"/>
 		</TableRow>
 		<TableRow
 			android:layout_width="match_parent"
@@ -122,25 +122,25 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onNumClick"
-				android:text="."/>
+				android:text="@string/point"/>
 			<Button
 				android:id="@+id/zeroBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onNumClick"
-				android:text="0"/>
+				android:text="@string/_0"/>
 			<Button
 				android:id="@+id/negBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onNumClick"
-				android:text="+/-"/>
+				android:text="@string/negTog"/>
 			<Button
 				android:id="@+id/minusBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onOprClick"
-				android:text="-"/>
+				android:text="@string/minus"/>
 		</TableRow>
 		<TableRow
 			android:layout_width="match_parent"
@@ -150,25 +150,25 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onOprClick"
-				android:text="("/>
+				android:text="@string/openParen"/>
 			<Button
 				android:id="@+id/closeParenBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onOprClick"
-				android:text=")"/>
+				android:text="@string/closeParen"/>
 			<Button
 				android:id="@+id/clearBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onOprClick"
-				android:text="CLEAR"/>
+				android:text="@string/clear"/>
 			<Button
 				android:id="@+id/evalBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:onClick="onOprClick"
-				android:text="="/>
+				android:text="@string/eval"/>
 		</TableRow>
 	</TableLayout>
 </android.support.constraint.ConstraintLayout>
