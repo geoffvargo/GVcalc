@@ -150,6 +150,10 @@ public class MainActivity extends Activity {
 		currTok.setValue(")");
 	}
 
+	public void onEvalClick(View v) {
+
+	}
+
 	public enum Type {
 		NUM, VAR, OP, LEFT_PAREN, RIGHT_PAREN, EMPTY
 	}
