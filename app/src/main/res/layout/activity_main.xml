@@ -149,13 +149,13 @@
 				android:id="@+id/openParenBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:onClick="onOprClick"
+				android:onClick="onLeftParenClick"
 				android:text="@string/openParen"/>
 			<Button
 				android:id="@+id/closeParenBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:onClick="onOprClick"
+				android:onClick="onRightParenClick"
 				android:text="@string/closeParen"/>
 			<Button
 				android:id="@+id/clearBTN"

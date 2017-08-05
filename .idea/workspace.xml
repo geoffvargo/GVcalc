@@ -23,7 +23,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe8c002-a0f4-4507-818c-5ab1b1c9b3b2" name="Default" comment="Added T">
+    <list default="true" id="4fe8c002-a0f4-4507-818c-5ab1b1c9b3b2" name="Default" comment="Modified existing button handlers to use the Token class. Added">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -33,6 +33,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
     </list>
     <ignored path="GVcalc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,9 +69,27 @@
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="280">
+              <caret line="157" column="50" selection-start-line="157" selection-start-column="50" selection-end-line="157" selection-end-column="50" />
+              <folding>
+                <element signature="e#1389#1401#0" expanded="true" />
+                <element signature="e#1577#1589#0" expanded="true" />
+                <element signature="e#1764#1776#0" expanded="true" />
+                <element signature="e#1950#1963#0" expanded="true" />
+                <element signature="e#2244#2256#0" expanded="true" />
+                <element signature="e#2431#2443#0" expanded="true" />
+                <element signature="e#2617#2629#0" expanded="true" />
+                <element signature="e#2808#2826#0" expanded="true" />
+                <element signature="e#3106#3118#0" expanded="true" />
+                <element signature="e#3292#3304#0" expanded="true" />
+                <element signature="e#3480#3492#0" expanded="true" />
+                <element signature="e#3667#3681#0" expanded="true" />
+                <element signature="e#3963#3978#0" expanded="true" />
+                <element signature="e#4153#4165#0" expanded="true" />
+                <element signature="e#4339#4355#0" expanded="true" />
+                <element signature="e#4531#4546#0" expanded="true" />
+                <element signature="e#4838#4857#0" expanded="true" />
+              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -91,17 +110,18 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+            <state relative-caret-position="1952">
+              <caret line="137" column="30" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#3446#3447#0" expanded="true" />
-                <element signature="e#3467#3468#0" expanded="true" />
-                <element signature="e#3507#3508#0" expanded="true" />
-                <element signature="e#3534#3535#0" expanded="true" />
+                <element signature="class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#isVar#0;class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#isLeftParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#isRightParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#isOperator#0;class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#isEmpty#0;class#Token#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#toString#0;class#Token#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2464,7 +2484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500531462194</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Token class to handle tokens.">
+      <created>1501877222965</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1501877222965</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2488,6 +2515,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6088766" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2508,7 +2536,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -2549,18 +2576,20 @@
     <MESSAGE value="Started button implementation." />
     <MESSAGE value="Created separate event handlers for number and operator buttons." />
     <MESSAGE value="Partially implemented event handlers for buttons." />
-    <option name="LAST_COMMIT_MESSAGE" value="Partially implemented event handlers for buttons." />
+    <MESSAGE value="Added Token class to handle tokens." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Token class to handle tokens." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="14" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
-        <watch expression="numStack" custom="com.vargo.geoff.gvcalc.MainActivity" />
+        <watch expression="currTok" language="JAVA" />
+        <watch expression="tokens" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -2569,7 +2598,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1764#1776#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2244#2256#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4838#4857#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2589,14 +2636,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3467#3468#0" expanded="true" />
-            <element signature="e#3507#3508#0" expanded="true" />
-            <element signature="e#3534#3535#0" expanded="true" />
+            <element signature="class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isVar#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isLeftParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isRightParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isOperator#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#toString#0;class#Token#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2605,7 +2653,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1764#1776#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2244#2256#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4838#4857#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2617,14 +2683,15 @@
         <state relative-caret-position="204">
           <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3467#3468#0" expanded="true" />
-            <element signature="e#3507#3508#0" expanded="true" />
-            <element signature="e#3534#3535#0" expanded="true" />
+            <element signature="class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isVar#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isLeftParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isRightParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isOperator#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#toString#0;class#Token#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2633,7 +2700,25 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1764#1776#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2244#2256#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4838#4857#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -2645,14 +2730,15 @@
         <state relative-caret-position="187">
           <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3467#3468#0" expanded="true" />
-            <element signature="e#3507#3508#0" expanded="true" />
-            <element signature="e#3534#3535#0" expanded="true" />
+            <element signature="class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isVar#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isLeftParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isRightParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isOperator#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#toString#0;class#Token#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2661,7 +2747,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1764#1776#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2244#2256#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4838#4857#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2673,14 +2777,15 @@
         <state relative-caret-position="136">
           <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3467#3468#0" expanded="true" />
-            <element signature="e#3507#3508#0" expanded="true" />
-            <element signature="e#3534#3535#0" expanded="true" />
+            <element signature="class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isVar#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isLeftParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isRightParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isOperator#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#toString#0;class#Token#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2735,17 +2840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/token.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -2754,19 +2848,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/java/util/Queue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="157" column="50" selection-start-line="157" selection-start-column="50" selection-end-line="157" selection-end-column="50" />
+          <folding>
+            <element signature="e#1389#1401#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#1764#1776#0" expanded="true" />
+            <element signature="e#1950#1963#0" expanded="true" />
+            <element signature="e#2244#2256#0" expanded="true" />
+            <element signature="e#2431#2443#0" expanded="true" />
+            <element signature="e#2617#2629#0" expanded="true" />
+            <element signature="e#2808#2826#0" expanded="true" />
+            <element signature="e#3106#3118#0" expanded="true" />
+            <element signature="e#3292#3304#0" expanded="true" />
+            <element signature="e#3480#3492#0" expanded="true" />
+            <element signature="e#3667#3681#0" expanded="true" />
+            <element signature="e#3963#3978#0" expanded="true" />
+            <element signature="e#4153#4165#0" expanded="true" />
+            <element signature="e#4339#4355#0" expanded="true" />
+            <element signature="e#4531#4546#0" expanded="true" />
+            <element signature="e#4838#4857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+        <state relative-caret-position="1952">
+          <caret line="137" column="30" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3467#3468#0" expanded="true" />
-            <element signature="e#3507#3508#0" expanded="true" />
-            <element signature="e#3534#3535#0" expanded="true" />
+            <element signature="class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isVar#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isLeftParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isRightParen#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isOperator#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Token#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#toString#0;class#Token#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
