@@ -154,6 +154,62 @@ public class MainActivity extends Activity {
 
 	}
 
+	public Token calc(ArrayDeque<Token> tokenList) {
+		Token ans = new Token();
+
+		while (!tokenList.isEmpty()) {
+			Token token = tokenList.removeLast();
+			switch (token.getType()) {
+				case NUM:
+					numStack.push(token);
+					break;
+				case VAR:
+					break;
+				case OP:
+					break;
+				case LEFT_PAREN:
+					opStack.push(token);
+					break;
+				case RIGHT_PAREN:
+					while (!opStack.peek().isLeftParen()) {
+						Token op = opStack.pop();
+						Token num1 = numStack.pop();
+						Token num2 = numStack.pop();
+					}
+					break;
+				case EMPTY:
+					break;
+			}
+		}
+
+		return ans;
+	}
+
+	public Token eval(Token op, Token num1, Token num2) {
+		Token ans = new Token(NUM);
+		double val1 = Double.valueOf(num1.getValue());
+		double val2 = Double.valueOf(num2.getValue());
+
+		String opVal = op.getValue();
+		switch (opVal) {
+			case "-":
+				ans.setValue(String.valueOf(val1 - val2));
+				return ans;
+			case "+":
+				ans.setValue(String.valueOf(val1 + val2));
+				return ans;
+			case "÷":
+				ans.setValue(String.valueOf(val1 / val2));
+				return ans;
+			case "×":
+				ans.setValue(String.valueOf(val1 * val2));
+				return ans;
+
+		}
+
+		return ans;
+	}
+
 	public enum Type {
 		NUM, VAR, OP, LEFT_PAREN, RIGHT_PAREN, EMPTY
 	}
