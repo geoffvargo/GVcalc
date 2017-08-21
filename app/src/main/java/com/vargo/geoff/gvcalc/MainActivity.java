@@ -154,6 +154,20 @@ public class MainActivity extends Activity {
 
 	}
 
+	public boolean opPrec(Token op1, Token op2) throws Exception {
+		if (!op1.isOperator() || !op2.isOperator()) {
+			throw new Exception("invalid input");
+		}
+
+		if (op1.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
+			return false;
+		} else if ((op1.getValue().matches("\\\\") || op1.getValue().matches("\\*")) && (op2.getValue().matches("\\+") || op2.getValue().matches("\\-"))) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	public Token calc(ArrayDeque<Token> tokenList) {
 		Token ans = new Token();
 

@@ -1,57 +1,83 @@
+%
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{textcomp}
+\usepackage{mathtools}
 
 \begin{document}
-	
-	\begin{algorithm}
-		\caption{in-fix to post-fix conversion}
-		\label{shuntingYard}
-		\begin{algorithmic}[1]
-			\Function{shuntingYard}{\textit{tokenList}[]}
-			\While {tokenList.\textsc{isEmpty}() = FALSE}
-			\State {token $ \gets $ tokenList.\textsc{pop}();}
-				\If {token.\textsc{isNum}() = TRUE}
-					\State numStack.\textsc{push}(\textit{token.\textsc{getVal()}})
-				\ElsIf {token.\textsc{isVar}() = TRUE}
-					\State value $ \gets $ \textsc{getVar}(\textit{token})
-					\State numStack.\textsc{push}(\textit{value})
-				\ElsIf {token.\textsc{isLeftParen}() = TRUE}
-					\State opStack.\textsc{push}(\textit{token.\textsc{getVal}}())
-				\ElsIf {token.\textsc{isRightParen}() = TRUE}
-					\While {opStack.\textsc{peek}() $ \neq $ ` \texttt{(} '}
-						\State op $ \gets $ opStack.\textsc{pop}()
-						\State num1 $ \gets $ numStack.\textsc{pop}()
-						\State num2 $ \gets $ numStack.\textsc{pop}()
-						\State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
-						\State numStack.\textsc{push}(\textit{result})
-					\EndWhile
-					\State opStack.\textsc{pop}()
-				\ElsIf {token.\textsc{isOperator}() = TRUE}
-					\While {opStack.\textsc{isEmpty}() = FALSE \textbf{and} \textsc{opPrec}(\textit{opstack.}\textsc{peek()}\textit{, token}) $ \geq $ 0}
-						\State op $ \gets $ opStack.\textsc{pop}()
-						\State num1 $ \gets $ numStack.\textsc{pop}()
-						\State num2 $ \gets $ numStack.\textsc{pop}()
-						\State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
-						\State numStack.\textsc{push(\textit{result})}
-					\EndWhile
-					\State opStack.\textsc{push(\textit{token})}
-				\EndIf
-			\EndWhile
-			\While {opStack.\textsc{isEmpty()} = FALSE}
-				\State op $ \gets $ opStack.\textsc{pop}()
-				\State num1 $ \gets $ numStack.\textsc{pop}()
-				\State num2 $ \gets $ numStack.\textsc{pop}()
-				\State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
-				\State numStack.\textsc{push(\textit{result})}
-			\EndWhile
-			
-			\State \Return numStack.\textsc{pop()}
-			\EndFunction
-		\end{algorithmic}
-	\end{algorithm}
-\end{document}}
+        
+        \begin{algorithm}
+                \caption{in-fix to post-fix conversion}
+                \label{shuntingYard}
+                \begin{algorithmic}[1]
+                        \Function{shuntingYard}{\textit{tokenList}[]}
+                        \While {tokenList.\textsc{isEmpty}() = FALSE}
+                        \State {token $ \gets $ tokenList.\textsc{pop}();}
+                                \If {token.\textsc{isNum}() = TRUE}
+                                        \State numStack.\textsc{push}(\textit{token.\textsc{getVal()}})
+                                \ElsIf {token.\textsc{isVar}() = TRUE}
+                                        \State value $ \gets $ \textsc{getVar}(\textit{token})
+                                        \State numStack.\textsc{push}(\textit{value})
+                                \ElsIf {token.\textsc{isLeftParen}() = TRUE}
+                                        \State opStack.\textsc{push}(\textit{token.\textsc{getVal}}())
+                                \ElsIf {token.\textsc{isRightParen}() = TRUE}
+                                        \While {opStack.\textsc{peek}() $ \neq $ ` \texttt{(} '}
+                                                \State op $ \gets $ opStack.\textsc{pop}()
+                                                \State num1 $ \gets $ numStack.\textsc{pop}()
+                                                \State num2 $ \gets $ numStack.\textsc{pop}()
+                                                \State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
+                                                \State numStack.\textsc{push}(\textit{result})
+                                        \EndWhile
+                                        \State opStack.\textsc{pop}()
+                                \ElsIf {token.\textsc{isOperator}() = TRUE}
+                                        \While {opStack.\textsc{isEmpty}() = FALSE \textbf{and} \textsc{opPrec}(\textit{opstack.}\textsc{peek()}\textit{, token}) = TRUE}
+                                                \State op $ \gets $ opStack.\textsc{pop}()
+                                                \State num1 $ \gets $ numStack.\textsc{pop}()
+                                                \State num2 $ \gets $ numStack.\textsc{pop}()
+                                                \State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
+                                                \State numStack.\textsc{push(\textit{result})}
+                                        \EndWhile
+                                        \State opStack.\textsc{push(\textit{token})}
+                                \EndIf
+                        \EndWhile
+                        \While {opStack.\textsc{isEmpty()} = FALSE}
+                                \State op $ \gets $ opStack.\textsc{pop}()
+                                \State num1 $ \gets $ numStack.\textsc{pop}()
+                                \State num2 $ \gets $ numStack.\textsc{pop}()
+                                \State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
+                                \State numStack.\textsc{push(\textit{result})}
+                        \EndWhile
+                        \State \Return numStack.\textsc{pop()}
+                        \EndFunction
+                \end{algorithmic}
+        \end{algorithm}
+    
+    \begin{algorithm}
+    	\caption{determine operator precedence}
+    	\label{opPrec}
+    	\begin{algorithmic}[1]
+    		\Function{opPrec}{\textit{op1, op2}}
+    			\If {op2 = ` \texttt{(} ' \textbf{or} op2 = ` \texttt{)} '}
+    				\State \Return \texttt{false}
+    			\ElsIf {$\left($op1 = ` \texttt{/} ' \texttt{or} op1 = ` \texttt{*} ' \right  }
+    			\EndIf
+    		\EndFunction
+    	\end{algorithmic}
+    \end{algorithm}
+    
+    \begin{algorithm}
+    	\caption{evaluate math}
+    	\label{eval}
+    	\begin{algorithmic}[1]
+    		\Function{eval}{\textit{op, num1, num2}} 
+    			\If {}
+    			\ElsIf {}
+    			\EndIf
+    		\EndFunction
+    	\end{algorithmic}
+    \end{algorithm}
+\end{document}
