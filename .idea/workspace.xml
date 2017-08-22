@@ -24,7 +24,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe8c002-a0f4-4507-818c-5ab1b1c9b3b2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shuntingYard.pdf" afterPath="$PROJECT_DIR$/shuntingYard.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
@@ -77,15 +76,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="715">
-              <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
+            <state relative-caret-position="952">
+              <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
               <folding>
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
                 <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
@@ -2614,7 +2611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502252550434</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Implemted the opPrec() function.">
+      <created>1503293513138</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1503293513138</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2704,7 +2708,8 @@
     <MESSAGE value="Modified existing button handlers to use the Token class. Created ArrayDeque&lt;Token&gt; tokens to act as a Tokens array for processing input, and adapted all button handlers to use it." />
     <MESSAGE value="Added .tex and .pdf documents detailing the Shunting Yard algorithm." />
     <MESSAGE value="Partially implemented eval() function for calculation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Partially implemented eval() function for calculation." />
+    <MESSAGE value="Implemted the opPrec() function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemted the opPrec() function." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2741,8 +2746,6 @@
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
             <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
             <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
@@ -2784,8 +2787,6 @@
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
             <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
             <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
@@ -2827,8 +2828,6 @@
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
             <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
             <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
@@ -2862,8 +2861,6 @@
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
             <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
             <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
@@ -2897,8 +2894,6 @@
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
             <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
             <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
@@ -2932,8 +2927,6 @@
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
             <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
             <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />
@@ -3018,15 +3011,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
+        <state relative-caret-position="952">
+          <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
           <folding>
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOprClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
             <element signature="class#Type#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Token#2;class#Token#0;class#MainActivity#0" expanded="false" />
             <element signature="method#isNum#0;class#Token#0;class#MainActivity#0" expanded="false" />

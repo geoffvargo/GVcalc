@@ -57,13 +57,16 @@
         \end{algorithm}
     
     \begin{algorithm}
-    	\caption{determine operator precedence}
+    	\caption{determine operator precedence: TRUE if op1 has precedence}
     	\label{opPrec}
     	\begin{algorithmic}[1]
     		\Function{opPrec}{\textit{op1, op2}}
     			\If {op2 = ` \texttt{(} ' \textbf{or} op2 = ` \texttt{)} '}
     				\State \Return \texttt{false}
-    			\ElsIf {$\left($op1 = ` \texttt{/} ' \texttt{or} op1 = ` \texttt{*} ' \right  }
+    			\ElsIf {\textbf{(}op1 = ` \texttt{/} ' \textbf{or} op1 = ` \texttt{*} '\textbf{) and (}op2 = ` \texttt{+} ' \textbf{or} op2 = ` \texttt{-} '\textbf{)} }
+    				\State \Return \texttt{false}
+    			\Else 
+    				\State \Return \texttt{true}
     			\EndIf
     		\EndFunction
     	\end{algorithmic}
@@ -74,8 +77,18 @@
     	\label{eval}
     	\begin{algorithmic}[1]
     		\Function{eval}{\textit{op, num1, num2}} 
-    			\If {}
-    			\ElsIf {}
+    			\If {op = ` \texttt{+} '}
+    				\State \Return \textbf{(}num1 + num2\textbf{)}
+    			\ElsIf {op = ` \texttt{-} '}
+    				\State \Return \textbf{(}num1 - num2\textbf{)}
+    			\ElsIf {op = ` \texttt{*} '}
+    				\State \Return \textbf{(}num1 * num2\textbf{)}
+    			\ElsIf {op = ` \texttt{/} '}
+    				\If {num2 = 0}
+    					\State \Return \textsc{error}
+    				\Else
+    					\State \Return \textbf{(}num1 / num2\textbf{)}
+    				\EndIf
     			\EndIf
     		\EndFunction
     	\end{algorithmic}

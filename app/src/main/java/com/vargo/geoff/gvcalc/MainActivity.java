@@ -161,7 +161,7 @@ public class MainActivity extends Activity {
 
 		if (op1.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
 			return false;
-		} else if ((op1.getValue().matches("\\\\") || op1.getValue().matches("\\*")) && (op2.getValue().matches("\\+") || op2.getValue().matches("\\-"))) {
+		} else if ((op1.getValue().matches("\\\\") || op1.getValue().matches("\\*")) && (op2.getValue().matches("\\+") || op2.getValue().matches("-"))) {
 			return false;
 		} else {
 			return true;
@@ -180,6 +180,7 @@ public class MainActivity extends Activity {
 				case VAR:
 					break;
 				case OP:
+					opStack.push(token);
 					break;
 				case LEFT_PAREN:
 					opStack.push(token);
@@ -189,17 +190,27 @@ public class MainActivity extends Activity {
 						Token op = opStack.pop();
 						Token num1 = numStack.pop();
 						Token num2 = numStack.pop();
+						Token result = eval(op, num1, num2);
+						numStack.push(result);
 					}
+					opStack.pop();
 					break;
 				case EMPTY:
 					break;
 			}
 		}
-
+		while (!opStack.isEmpty()) {
+			Token op = opStack.pop();
+			Token num1 = numStack.pop();
+			Token num2 = numStack.pop();
+			Token result = eval(op, num1, num2);
+			numStack.push(result);
+		}
+		ans = numStack.pop();
 		return ans;
 	}
 
-	public Token eval(Token op, Token num1, Token num2) {
+	public Token eval(Token op, Token num1, Token num2) throws IllegalArgumentException {
 		Token ans = new Token(NUM);
 		double val1 = Double.valueOf(num1.getValue());
 		double val2 = Double.valueOf(num2.getValue());
@@ -213,6 +224,9 @@ public class MainActivity extends Activity {
 				ans.setValue(String.valueOf(val1 + val2));
 				return ans;
 			case "÷":
+				if (val2 == 0.0) {
+					throw new IllegalArgumentException();
+				}
 				ans.setValue(String.valueOf(val1 / val2));
 				return ans;
 			case "×":
