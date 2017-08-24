@@ -18,10 +18,17 @@ import static com.vargo.geoff.gvcalc.Type.RIGHT_PAREN;
 
 public class MainActivity extends Activity {
 
-	protected static Stack<Token> numStack = new Stack<>();
-	protected static Stack<Token> opStack = new Stack<>();
+	private static final String DIV = "÷";
+	private static final String MULT = "×";
+	private static final String LPAREN = "(";
+	private static final String RPARN = ")";
+
+	protected static ArrayDeque<Token> numStack = new ArrayDeque<>();
+	protected static ArrayDeque<Token> opStack = new ArrayDeque<>();
 
 	public ArrayDeque<Token> tokens = new ArrayDeque<>();
+
+	public TokenBuilder tokenBuilder = new TokenBuilder();
 
 	protected String tempStr = "";
 	protected Token currTok = new TokenBuilder().createToken();
@@ -171,7 +178,7 @@ public class MainActivity extends Activity {
 		Token ans = new TokenBuilder().createToken();
 
 		while (!tokenList.isEmpty()) {
-			Token token = tokenList.removeLast();
+			Token token = tokenList.remove();
 			switch (token.getType()) {
 				case NUM:
 					numStack.push(token);
@@ -182,10 +189,15 @@ public class MainActivity extends Activity {
 					opStack.push(token);
 					break;
 				case LEFT_PAREN:
+					if (tokenList.getFirst().isNum() && !numStack.isEmpty() && opStack.isEmpty()) {
+						opStack.push(token);
+						opStack.push(tokenBuilder.setType(OP).setValue(MULT).createToken());
+						break;
+					}
 					opStack.push(token);
 					break;
 				case RIGHT_PAREN:
-					while (!opStack.peek().isLeftParen()) {
+					while (opStack.isEmpty() || !opStack.peek().isLeftParen()) {
 						Token op = opStack.pop();
 						Token num1 = numStack.pop();
 						Token num2 = numStack.pop();
@@ -223,10 +235,10 @@ public class MainActivity extends Activity {
 				ans.setValue(String.valueOf(val1 + val2));
 				return ans;
 			case "÷":
-				if (val2 == 0.0) {
+				if (val1 == 0.0) {
 					throw new IllegalArgumentException();
 				}
-				ans.setValue(String.valueOf(val1 / val2));
+				ans.setValue(String.valueOf(val2 / val1));
 				return ans;
 			case "×":
 				ans.setValue(String.valueOf(val1 * val2));
