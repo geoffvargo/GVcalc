@@ -57,16 +57,16 @@
         \end{algorithm}
     
     \begin{algorithm}
-    	\caption{determine operator precedence: TRUE if op1 has precedence}
+    	\caption{determine operator precedence: \textsc{true} if \textit{op1} has precedence}
     	\label{opPrec}
     	\begin{algorithmic}[1]
     		\Function{opPrec}{\textit{op1, op2}}
-    			\If {op2 = ` \texttt{(} ' \textbf{or} op2 = ` \texttt{)} '}
-    				\State \Return \texttt{false}
-    			\ElsIf {\textbf{(}op1 = ` \texttt{/} ' \textbf{or} op1 = ` \texttt{*} '\textbf{) and (}op2 = ` \texttt{+} ' \textbf{or} op2 = ` \texttt{-} '\textbf{)} }
-    				\State \Return \texttt{false}
+    			\If {\textit{op2} = ` \texttt{(} ' \textbf{OR} \textit{op2} = ` \texttt{)} '}
+    				\State \Return \textsc{false}
+    			\ElsIf {\textbf{(}\textit{op1} = ` \texttt{/} ' \textbf{OR} \textit{op1} = ` \texttt{*} '\textbf{) AND (}\textit{op2} = ` \texttt{+} ' \textbf{OR} \textit{op2} = ` \texttt{-} '\textbf{)} }
+    				\State \Return \textsc{false}
     			\Else 
-    				\State \Return \texttt{true}
+    				\State \Return \textsc{true}
     			\EndIf
     		\EndFunction
     	\end{algorithmic}
@@ -77,17 +77,17 @@
     	\label{eval}
     	\begin{algorithmic}[1]
     		\Function{eval}{\textit{op, num1, num2}} 
-    			\If {op = ` \texttt{+} '}
-    				\State \Return \textbf{(}num1 + num2\textbf{)}
-    			\ElsIf {op = ` \texttt{-} '}
-    				\State \Return \textbf{(}num1 - num2\textbf{)}
-    			\ElsIf {op = ` \texttt{*} '}
-    				\State \Return \textbf{(}num1 * num2\textbf{)}
-    			\ElsIf {op = ` \texttt{/} '}
-    				\If {num2 = 0}
+    			\If {\textit{op} = ` \texttt{+} '}
+    				\State \Return \textbf{(}\textit{num1} + \textit{num2}\textbf{)}
+    			\ElsIf {\textit{op} = ` \texttt{-} '}
+    				\State \Return \textbf{(}\textit{num1} - \textit{num2}\textbf{)}
+    			\ElsIf {\textit{op} = ` \texttt{*} '}
+    				\State \Return \textbf{(}\textit{num1} * \textit{num2}\textbf{)}
+    			\ElsIf {\textit{op} = ` \texttt{/} '}
+    				\If {\textit{num2} = 0}
     					\State \Return \textsc{error}
     				\Else
-    					\State \Return \textbf{(}num1 / num2\textbf{)}
+    					\State \Return \textbf{(}\textit{num1} / \textit{num2}\textbf{)}
     				\EndIf
     			\EndIf
     		\EndFunction
