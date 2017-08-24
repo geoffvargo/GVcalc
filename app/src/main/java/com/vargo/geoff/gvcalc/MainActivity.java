@@ -235,10 +235,10 @@ public class MainActivity extends Activity {
 				ans.setValue(String.valueOf(val1 + val2));
 				return ans;
 			case "÷":
-				if (val2 == 0.0) {
+				if (val1 == 0.0) {
 					throw new IllegalArgumentException();
 				}
-				ans.setValue(String.valueOf(val1 / val2));
+				ans.setValue(String.valueOf(val2 / val1));
 				return ans;
 			case "×":
 				ans.setValue(String.valueOf(val1 * val2));
