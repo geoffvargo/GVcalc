@@ -171,4 +171,23 @@ public class ExampleUnitTest {
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
 	}
+
+	@Test
+	public void parens4_isCorrect() throws Exception {
+		addToken(NUM, "55");
+		addToken(OP, MULT);
+		addToken(NUM, "3");
+		addToken(LEFT_PAREN, LPAREN);
+		addToken(NUM, "1");
+		addToken(OP, "+");
+		addToken(NUM, "3");
+		addToken(RIGHT_PAREN, RPARN);
+		// 55*3(1+3)
+
+		Token ans = activity.calc(activity.tokens);
+		Double rightAns = 660.0;
+		System.out.println(ans.getValue());
+		Double actual = Double.parseDouble(ans.getValue());
+		assertEquals(rightAns, actual);
+	}
 }

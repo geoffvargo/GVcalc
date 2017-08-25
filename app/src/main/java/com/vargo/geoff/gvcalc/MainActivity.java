@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayDeque;
 import java.util.Stack;
 
+import static com.vargo.geoff.gvcalc.Type.EMPTY;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
 import static com.vargo.geoff.gvcalc.Type.NUM;
 import static com.vargo.geoff.gvcalc.Type.OP;
@@ -31,7 +32,7 @@ public class MainActivity extends Activity {
 	public TokenBuilder tokenBuilder = new TokenBuilder();
 
 	protected String tempStr = "";
-	protected Token currTok = new TokenBuilder().createToken();
+	protected Token currTok = new TokenBuilder().setType(EMPTY).setValue("").createToken();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class MainActivity extends Activity {
 
 	public void onNumClick(View view) {
 		if (!currTok.isNum() && !currTok.isEmpty()) {
-			tokens.push(currTok);
+			tokens.add(currTok);
 			currTok = new TokenBuilder().setType(NUM).createToken();
 		} else if (currTok.isEmpty()) {
 			currTok.setType(NUM);
@@ -106,8 +107,8 @@ public class MainActivity extends Activity {
 			tempStr = "";
 			Button curr = findViewById(v.getId());
 			if (!currTok.isOperator() && !currTok.isEmpty()) {
-				tokens.push(currTok);
-				currTok = new TokenBuilder().setType(OP).createToken();
+				tokens.add(currTok);
+				currTok = new TokenBuilder().setType(OP).setValue("").createToken();
 			} else if (currTok.isEmpty()) {
 				currTok.setType(OP);
 			}
@@ -134,7 +135,7 @@ public class MainActivity extends Activity {
 
 	public void onLeftParenClick(View v) {
 		if (!currTok.isLeftParen() && !currTok.isEmpty()) {
-			tokens.push(currTok);
+			tokens.add(currTok);
 			currTok = new TokenBuilder().setType(LEFT_PAREN).createToken();
 		} else if (currTok.isEmpty()) {
 			currTok.setType(LEFT_PAREN);
@@ -146,7 +147,7 @@ public class MainActivity extends Activity {
 
 	public void onRightParenClick(View v) {
 		if (!currTok.isRightParen() && !currTok.isEmpty()) {
-			tokens.push(currTok);
+			tokens.add(currTok);
 			currTok = new TokenBuilder().setType(RIGHT_PAREN).createToken();
 		} else if (currTok.isEmpty()) {
 			currTok.setType(RIGHT_PAREN);
@@ -157,7 +158,11 @@ public class MainActivity extends Activity {
 	}
 
 	public void onEvalClick(View v) {
-
+		tokens.add(currTok);
+		currTok = calc(tokens);
+		tokens.clear();
+		tokens.add(currTok);
+		((TextView) findViewById(R.id.dispTXT)).setText(String.valueOf(currTok.getValue()));
 	}
 
 	public boolean opPrec(Token op1, Token op2) throws Exception {
@@ -189,7 +194,7 @@ public class MainActivity extends Activity {
 					opStack.push(token);
 					break;
 				case LEFT_PAREN:
-					if (tokenList.getFirst().isNum() && !numStack.isEmpty() && opStack.isEmpty()) {
+					if (tokenList.getFirst().isNum() && !numStack.isEmpty() && (opStack.size() < numStack.size())) {
 						opStack.push(token);
 						opStack.push(tokenBuilder.setType(OP).setValue(MULT).createToken());
 						break;
@@ -197,7 +202,7 @@ public class MainActivity extends Activity {
 					opStack.push(token);
 					break;
 				case RIGHT_PAREN:
-					while (opStack.isEmpty() || !opStack.peek().isLeftParen()) {
+					while ((opStack.isEmpty() || !opStack.peek().isLeftParen()) && numStack.size() >= 2) {
 						Token op = opStack.pop();
 						Token num2 = numStack.pop();
 						Token num1 = numStack.pop();
@@ -210,7 +215,7 @@ public class MainActivity extends Activity {
 					break;
 			}
 		}
-		while (!opStack.isEmpty()) {
+		while (!opStack.isEmpty() && numStack.size() >= 2) {
 			Token op = opStack.pop();
 			Token num2 = numStack.pop();
 			Token num1 = numStack.pop();
