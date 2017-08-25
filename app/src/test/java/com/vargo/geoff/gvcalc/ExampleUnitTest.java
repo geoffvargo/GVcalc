@@ -7,7 +7,6 @@ import java.util.ArrayDeque;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
 import static com.vargo.geoff.gvcalc.Type.NUM;
 import static com.vargo.geoff.gvcalc.Type.OP;
-
 import static com.vargo.geoff.gvcalc.Type.RIGHT_PAREN;
 import static org.junit.Assert.assertEquals;
 
@@ -18,15 +17,13 @@ import static org.junit.Assert.assertEquals;
  */
 public class ExampleUnitTest {
 
-	protected ArrayDeque<Token> tokens = new ArrayDeque<>();
-	protected TokenBuilder tbuild = new TokenBuilder();
-	protected MainActivity activity = new MainActivity();
-
 	private static final String DIV = "÷";
 	private static final String MULT = "×";
 	private static final String LPAREN = "(";
 	private static final String RPARN = ")";
-
+	protected ArrayDeque<Token> tokens = new ArrayDeque<>();
+	protected TokenBuilder tbuild = new TokenBuilder();
+	protected MainActivity activity = new MainActivity();
 
 	public void setupTokensDIV_1() {
 		addToken(NUM, "4");
@@ -98,7 +95,21 @@ public class ExampleUnitTest {
 		System.out.println(ans.getValue());
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
+	}
 
+	@Test
+	public void ternaryOp_isCorrect() {
+		addToken(NUM, "1");
+		addToken(OP, "+");
+		addToken(NUM, "3");
+		addToken(OP, "-");
+		addToken(NUM, "2");
+
+		Token ans = activity.calc(activity.tokens);
+		Double rightAns = 2.0;
+		System.out.println(ans.getValue());
+		Double actual = Double.parseDouble(ans.getValue());
+		assertEquals(rightAns, actual);
 	}
 
 	@Test
