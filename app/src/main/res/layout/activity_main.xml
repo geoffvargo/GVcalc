@@ -9,7 +9,7 @@
 
 	<ScrollView
 		android:id="@+id/calcDisplay"
-		android:layout_width="match_parent"
+		android:layout_width="0dp"
 		android:layout_height="350dp"
 		app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"
 		app:layout_constraintLeft_toRightOf="parent"
