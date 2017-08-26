@@ -47,6 +47,15 @@
         <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5fd5b0732bca4ff12153ee76856faa6afa259b32\classes.dex" />
     </item>
     <item
+        is-multidex="true"
+        jar="C:\Users\geoff\.android\build-cache\3ec6069b385a19c5071a4860aac823da6d6b3a09\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="28ebb0f0c104d23021519707b27d6b86039772b6">
+        <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3c33bbfdcc4f0171c160ab8f9e6635eff81d7637\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\geoff\.android\build-cache\d52e295638a0eeafa05db62c1553d331e0999981\output\jars\classes.jar"
         jumboMode="false"
@@ -97,8 +106,17 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="3405840b8a203e68eb881753595e7b0562841e0c">
+        sha1="6525097161452b023472efd5e98c3718fb491abb">
         <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_93508c4058122ede81c710a8cc9b9a238921ce9a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\geoff\.android\build-cache\3ec6069b385a19c5071a4860aac823da6d6b3a09\output\jars\libs\chunk-templates-3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ac60a044eb6c8a3f77498b3ffaf9ada21df4c1bf">
+        <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10\chunk-templates-3.0.1_62fd1db811265accf21dc75149d4c74bbbaf64be\classes.dex" />
     </item>
     <item
         is-multidex="false"
