@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayDeque;
-import java.util.Stack;
 
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
@@ -158,19 +157,25 @@ public class MainActivity extends Activity {
 	}
 
 	public void onEvalClick(View v) {
-		tokens.add(currTok);
-		currTok = calc(tokens);
-		tokens.clear();
-		tokens.add(currTok);
-		((TextView) findViewById(R.id.dispTXT)).setText(String.valueOf(currTok.getValue()));
+		if (!currTok.isEmpty() && !tokens.isEmpty()) {
+			tokens.add(currTok);
+			currTok = calc(tokens);
+			tokens.clear();
+			tokens.add(currTok);
+			((TextView) findViewById(R.id.dispTXT)).setText(String.valueOf(currTok.getValue()));
+		}
 	}
 
-	public boolean opPrec(Token op1, Token op2) throws Exception {
-		if (!op1.isOperator() || !op2.isOperator()) {
-			throw new Exception("invalid input");
-		}
+	public void onClearClick(View v) {
+		tokens.clear();
+		currTok = new TokenBuilder().createToken();
+		((TextView) findViewById(R.id.dispTXT)).setText("");
+	}
 
-		if (op1.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
+	public boolean opPrec(Token op1, Token op2) {
+		if (!op1.isOperator() || !op2.isOperator()) {
+			return false;
+		} else if (op1.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
 			return false;
 		} else if ((op1.getValue().matches("\\\\") || op1.getValue().matches("\\*")) && (op2.getValue().matches("\\+") || op2.getValue().matches("-"))) {
 			return false;
@@ -190,14 +195,26 @@ public class MainActivity extends Activity {
 					break;
 				case VAR:
 					break;
-				case OP:
-					opStack.push(token);
-					break;
 				case LEFT_PAREN:
-					if (tokenList.getFirst().isNum() && !numStack.isEmpty() && (opStack.size() < numStack.size())) {
-						opStack.push(token);
+					if (!numStack.isEmpty() && tokenList.peek().isNum() && (opStack.size() < numStack.size())) {
 						opStack.push(tokenBuilder.setType(OP).setValue(MULT).createToken());
+						opStack.push(token);
 						break;
+					} else {
+						opStack.push(token);
+						break;
+					}
+				case OP:
+					try {
+						while (!opStack.isEmpty() && opPrec(opStack.peek(), token)) {
+							Token op = opStack.pop();
+							Token num2 = numStack.pop();
+							Token num1 = numStack.pop();
+							Token result = eval(op, num1, num2);
+							numStack.push(result);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
 					}
 					opStack.push(token);
 					break;

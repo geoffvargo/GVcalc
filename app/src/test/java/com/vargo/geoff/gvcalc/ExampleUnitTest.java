@@ -182,10 +182,27 @@ public class ExampleUnitTest {
 		addToken(OP, "+");
 		addToken(NUM, "3");
 		addToken(RIGHT_PAREN, RPARN);
-		// 55*3(1+3)
+		// 55*3(1+3) = 660
 
 		Token ans = activity.calc(activity.tokens);
 		Double rightAns = 660.0;
+		System.out.println(ans.getValue());
+		Double actual = Double.parseDouble(ans.getValue());
+		assertEquals(rightAns, actual);
+	}
+
+	@Test
+	public void opPrec_test1() {
+		addToken(NUM, "22");
+		addToken(OP, MULT);
+		addToken(NUM, "2");
+		addToken(OP, "+");
+		addToken(NUM, "3");
+		// CORRECT ANS: 22 * 2 + 3 = 47
+		// WRONG ANS: 22 * 2 + 3 = 110
+
+		Token ans = activity.calc(activity.tokens);
+		Double rightAns = 47.0;
 		System.out.println(ans.getValue());
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
