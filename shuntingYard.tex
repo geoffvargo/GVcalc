@@ -60,7 +60,7 @@
     	\caption{determine operator precedence: \textsc{true} if \textit{op1} has precedence}
     	\label{opPrec}
     	\begin{algorithmic}[1]
-    		\Function{opPrec}{\textit{op1, op2}}
+    		\Function{opPrec}{\textit{op1 $\gets$ token, op2 $\gets$ opStack.\textsc{peek()}}}
     			\If {\textit{op2} = ` \texttt{(} ' \textbf{OR} \textit{op2} = ` \texttt{)} '}
     				\State \Return \textsc{false}
     			\ElsIf {\textbf{(}\textit{op1} = ` \texttt{/} ' \textbf{OR} \textit{op1} = ` \texttt{*} '\textbf{) AND (}\textit{op2} = ` \texttt{+} ' \textbf{OR} \textit{op2} = ` \texttt{-} '\textbf{)} }

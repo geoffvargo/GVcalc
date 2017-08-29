@@ -207,4 +207,20 @@ public class ExampleUnitTest {
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
 	}
+
+	@Test
+	public void opPrec_test2() {
+		addToken(NUM, "3");
+		addToken(OP, "+");
+		addToken(NUM, "22");
+		addToken(OP, DIV);
+		addToken(NUM, "2");
+		// CORRECT ANS: 3 + 22 / 2 = 14
+
+		Token ans = activity.calc(activity.tokens);
+		Double rightAns = 14.0;
+		System.out.println(ans.getValue());
+		Double actual = Double.parseDouble(ans.getValue());
+		assertEquals(rightAns, actual);
+	}
 }

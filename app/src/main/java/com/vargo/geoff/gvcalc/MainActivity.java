@@ -175,9 +175,9 @@ public class MainActivity extends Activity {
 	public boolean opPrec(Token op1, Token op2) {
 		if (!op1.isOperator() || !op2.isOperator()) {
 			return false;
-		} else if (op1.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
+		} else if (op2.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
 			return false;
-		} else if ((op1.getValue().matches("\\\\") || op1.getValue().matches("\\*")) && (op2.getValue().matches("\\+") || op2.getValue().matches("-"))) {
+		} else if ((op1.getValue().matches(DIV) || op1.getValue().matches(MULT)) && (op2.getValue().matches("\\+") || op2.getValue().matches("-"))) {
 			return false;
 		} else {
 			return true;
@@ -206,7 +206,7 @@ public class MainActivity extends Activity {
 					}
 				case OP:
 					try {
-						while (!opStack.isEmpty() && opPrec(opStack.peek(), token)) {
+						while (!opStack.isEmpty() && opPrec(token, opStack.peek())) {
 							Token op = opStack.pop();
 							Token num2 = numStack.pop();
 							Token num1 = numStack.pop();

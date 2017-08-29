@@ -30,10 +30,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shuntingYard.pdf" afterPath="$PROJECT_DIR$/shuntingYard.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shuntingYard.tex" afterPath="$PROJECT_DIR$/shuntingYard.tex" />
     </list>
     <ignored path="GVcalc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,8 +70,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="204" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="204" selection-end-column="25" />
+            <state relative-caret-position="-193">
+              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
               <folding>
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
@@ -86,8 +87,8 @@
       <file leaf-file-name="ExampleUnitTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1768">
-              <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2179,7 +2180,14 @@
         </subPane>
       </pane>
       <pane id="AndroidView">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GVcalc" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane">
@@ -2382,32 +2390,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ExampleUnitTest.parens2_isCorrect" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.vargo.geoff.gvcalc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="app" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.vargo.geoff.gvcalc" />
-      <option name="MAIN_CLASS_NAME" value="com.vargo.geoff.gvcalc.ExampleUnitTest" />
-      <option name="METHOD_NAME" value="parens2_isCorrect" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="ExampleUnitTest.parens3_isCorrect" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2447,6 +2429,32 @@
       <option name="PACKAGE_NAME" value="com.vargo.geoff.gvcalc" />
       <option name="MAIN_CLASS_NAME" value="com.vargo.geoff.gvcalc.ExampleUnitTest" />
       <option name="METHOD_NAME" value="opPrec_test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ExampleUnitTest.opPrec_test2" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.vargo.geoff.gvcalc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="app" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.vargo.geoff.gvcalc" />
+      <option name="MAIN_CLASS_NAME" value="com.vargo.geoff.gvcalc.ExampleUnitTest" />
+      <option name="METHOD_NAME" value="opPrec_test2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -2773,17 +2781,17 @@
       <item index="1" class="java.lang.String" itemvalue="Android JUnit.test in app" />
       <item index="2" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest" />
       <item index="3" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens4_isCorrect" />
-      <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens2_isCorrect" />
-      <item index="5" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens3_isCorrect" />
-      <item index="6" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
+      <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens3_isCorrect" />
+      <item index="5" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
+      <item index="6" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test2" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest" />
-        <item index="1" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
-        <item index="2" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens4_isCorrect" />
-        <item index="3" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens3_isCorrect" />
-        <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens2_isCorrect" />
+        <item index="1" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test2" />
+        <item index="2" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
+        <item index="3" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens4_isCorrect" />
+        <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens3_isCorrect" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -2990,36 +2998,43 @@
       <option name="project" value="LOCAL" />
       <updated>1503724713360</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixed issue with opPrec().">
+      <created>1503981462296</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1503981462296</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
     <history-entry file="ExampleUnitTest - 2017.08.28 at 23h 21m 59s.xml">
       <configuration name="ExampleUnitTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_opPrec_test1 - 2017.08.28 at 23h 10m 17s.xml">
-      <configuration name="ExampleUnitTest.opPrec_test1" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest - 2017.08.29 at 13h 00m 37s.xml">
+      <configuration name="ExampleUnitTest" configurationId="AndroidJUnit" />
     </history-entry>
     <history-entry file="ExampleUnitTest_opPrec_test1 - 2017.08.28 at 23h 20m 42s.xml">
       <configuration name="ExampleUnitTest.opPrec_test1" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_parens3_isCorrect - 2017.08.28 at 23h 10m 10s.xml">
-      <configuration name="ExampleUnitTest.parens3_isCorrect" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 16m 15s.xml">
+      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_parens3_isCorrect - 2017.08.28 at 23h 19m 38s.xml">
-      <configuration name="ExampleUnitTest.parens3_isCorrect" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 18m 26s.xml">
+      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_parens4_isCorrect - 2017.08.28 at 23h 09m 59s.xml">
-      <configuration name="ExampleUnitTest.parens4_isCorrect" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 19m 39s.xml">
+      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_parens4_isCorrect - 2017.08.28 at 23h 10m 37s.xml">
-      <configuration name="ExampleUnitTest.parens4_isCorrect" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 37m 22s.xml">
+      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_parens4_isCorrect - 2017.08.28 at 23h 10m 47s.xml">
-      <configuration name="ExampleUnitTest.parens4_isCorrect" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 44m 01s.xml">
+      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_parens4_isCorrect - 2017.08.28 at 23h 19m 10s.xml">
-      <configuration name="ExampleUnitTest.parens4_isCorrect" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 46m 11s.xml">
+      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
     </history-entry>
     <history-entry file="ExampleUnitTest_parens4_isCorrect - 2017.08.28 at 23h 20m 28s.xml">
       <configuration name="ExampleUnitTest.parens4_isCorrect" configurationId="AndroidJUnit" />
@@ -3154,14 +3169,15 @@
     <MESSAGE value="fixed hidden bug in calc()'s handling of parens." />
     <MESSAGE value="Added MathView module to build." />
     <MESSAGE value="Fixed issue with dispTXT" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with dispTXT" />
+    <MESSAGE value="Fixed issue with opPrec()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with opPrec()." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="106" />
+      <option name="time" value="108" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -3635,8 +3651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="204" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="204" selection-end-column="25" />
+        <state relative-caret-position="-193">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding>
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onNumClick#0;class#MainActivity#0" expanded="false" />
@@ -3650,8 +3666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+        <state relative-caret-position="486">
+          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
           <folding />
         </state>
       </provider>
