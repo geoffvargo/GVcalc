@@ -172,6 +172,23 @@ public class MainActivity extends Activity {
 		((TextView) findViewById(R.id.dispTXT)).setText("");
 	}
 
+	public void onPointClick(View v) {
+		if (tempStr.isEmpty() || currTok.isEmpty()) {
+			if (tempStr.isEmpty()) {
+				tempStr = tempStr.concat("0.");
+			}
+			if (currTok.isEmpty()) {
+				currTok.setType(NUM);
+				currTok.setValue("0.");
+			}
+			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+		} else {
+			tempStr = tempStr.concat(".");
+			currTok.concat(".");
+			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+		}
+	}
+
 	public boolean opPrec(Token op1, Token op2) {
 		if (!op1.isOperator() || !op2.isOperator()) {
 			return false;
