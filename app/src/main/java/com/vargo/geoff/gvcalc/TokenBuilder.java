@@ -1,7 +1,5 @@
 package com.vargo.geoff.gvcalc;
 
-import com.vargo.geoff.gvcalc.MainActivity.*;
-
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 
 /**
@@ -11,6 +9,7 @@ import static com.vargo.geoff.gvcalc.Type.EMPTY;
 public class TokenBuilder {
 	private Type type = EMPTY;
 	private String value = "";
+	private int length = 0;
 
 	public TokenBuilder setType(Type type) {
 		this.type = type;
@@ -22,7 +21,12 @@ public class TokenBuilder {
 		return this;
 	}
 
+	public TokenBuilder setLength(int length) {
+		this.length = length;
+		return this;
+	}
+
 	public Token createToken() {
-		return new Token(value, type);
+		return new Token(value, type, length);
 	}
 }

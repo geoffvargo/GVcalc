@@ -19,7 +19,7 @@
 			android:id="@+id/dispTXT"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			/>
+			android:textSize="24sp"/>
 	</ScrollView>
 	<TableLayout
 		android:id="@+id/calcKeyboard"
@@ -133,7 +133,7 @@
 				android:id="@+id/negBTN"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
+				android:onClick="onNegClick"
 				android:text="@string/negTog"/>
 			<Button
 				android:id="@+id/minusBTN"

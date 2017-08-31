@@ -11,6 +11,7 @@ import static com.vargo.geoff.gvcalc.Type.VAR;
 public class Token {
 	private String value = "";
 	private Type type = EMPTY;
+	private int length = 0;
 
 	public Token() {
 	}
@@ -24,8 +25,19 @@ public class Token {
 		this.type = type;
 	}
 
+	public Token(String value, Type type, int length) {
+		this.value = value;
+		this.type = type;
+		this.length = length;
+	}
+
 	public void concat(String str) {
 		this.value = this.value.concat(str);
+		this.length++;
+	}
+
+	public void prepend(String str) {
+		this.value = new String(str + this.value);
 	}
 
 	public Type getType() {
@@ -99,4 +111,13 @@ public class Token {
 				", type=" + type +
 				'}';
 	}
+
+	public int getLength() {
+		return length;
+	}
+
+	public void setLength(int length) {
+		this.length = length;
+	}
+
 }

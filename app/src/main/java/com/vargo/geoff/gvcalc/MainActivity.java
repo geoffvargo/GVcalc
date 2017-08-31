@@ -189,6 +189,23 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	public void onNegClick(View v) {
+		if (tempStr.isEmpty() || currTok.isEmpty()) {
+			if (tempStr.isEmpty()) {
+				tempStr = "-";
+			}
+			if (currTok.isEmpty()) {
+				currTok.setType(NUM);
+				currTok.setValue("-0");
+			}
+//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+		} else {
+			tempStr = new String("-" + tempStr);
+			currTok.prepend("-");
+//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+		}
+	}
+
 	public boolean opPrec(Token op1, Token op2) {
 		if (!op1.isOperator() || !op2.isOperator()) {
 			return false;
