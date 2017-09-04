@@ -23,6 +23,8 @@ public class MainActivity extends Activity {
 	private static final String LPAREN = "(";
 	private static final String RPARN = ")";
 
+	protected int currIndex = 0;
+
 	protected static ArrayDeque<Token> numStack = new ArrayDeque<>();
 	protected static ArrayDeque<Token> opStack = new ArrayDeque<>();
 
@@ -47,56 +49,58 @@ public class MainActivity extends Activity {
 		} else if (currTok.isEmpty()) {
 			currTok.setType(NUM);
 		}
+		TextView display = (TextView) findViewById(R.id.dispTXT);
 		switch (view.getId()) {
 			case R.id.zeroBTN:
 				tempStr = tempStr.concat("0");
 				currTok.concat("0");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length())));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length())));
 				break;
 			case R.id.oneBTN:
 				tempStr = tempStr.concat("1");
 				currTok.concat("1");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 			case R.id.twoBTN:
 				tempStr = tempStr.concat("2");
 				currTok.concat("2");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+//				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+
 				break;
 			case R.id.threeBTN:
 				tempStr = tempStr.concat("3");
 				currTok.concat("3");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 			case R.id.fourBTN:
 				tempStr = tempStr.concat("4");
 				currTok.concat("4");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 			case R.id.fiveBTN:
 				tempStr = tempStr.concat("5");
 				currTok.concat("5");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 			case R.id.sixBTN:
 				tempStr = tempStr.concat("6");
 				currTok.concat("6");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 			case R.id.sevenBTN:
 				tempStr = tempStr.concat("7");
 				currTok.concat("7");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 			case R.id.eightBTN:
 				tempStr = tempStr.concat("8");
 				currTok.concat("8");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 			case R.id.nineBTN:
 				tempStr = tempStr.concat("9");
 				currTok.concat("9");
-				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 				break;
 		}
 	}
@@ -106,6 +110,8 @@ public class MainActivity extends Activity {
 			tempStr = "";
 			Button curr = findViewById(v.getId());
 			if (!currTok.isOperator() && !currTok.isEmpty()) {
+				currTok.setOrdinal(currIndex);
+				currIndex++;
 				tokens.add(currTok);
 				currTok = new TokenBuilder().setType(OP).setValue("").createToken();
 			} else if (currTok.isEmpty()) {
@@ -200,8 +206,8 @@ public class MainActivity extends Activity {
 			}
 //			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 		} else {
+			currTok.negate();
 			tempStr = new String("-" + tempStr);
-			currTok.prepend("-");
 //			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 		}
 	}

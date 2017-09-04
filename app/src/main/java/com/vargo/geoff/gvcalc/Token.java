@@ -12,6 +12,8 @@ public class Token {
 	private String value = "";
 	private Type type = EMPTY;
 	private int length = 0;
+	private Double numVal = null;
+	private int ordinal = -1;
 
 	public Token() {
 	}
@@ -29,15 +31,32 @@ public class Token {
 		this.value = value;
 		this.type = type;
 		this.length = length;
+
+		if (this.type == NUM) {
+			if (!this.value.isEmpty()) {
+				this.numVal = 0.0;
+			} else {
+//				this.numVal = Double.parseDouble(this.value);
+			}
+		}
 	}
 
 	public void concat(String str) {
-		this.value = this.value.concat(str);
-		this.length++;
+		if (this.type == NUM) {
+			this.value = this.value.concat(str);
+			this.length++;
+
+			this.numVal = Double.parseDouble(this.value);
+		}
 	}
 
 	public void prepend(String str) {
-		this.value = new String(str + this.value);
+		if (this.type == NUM) {
+			this.value = new String(str + this.value);
+			this.length++;
+
+			this.numVal = Double.parseDouble(this.value);
+		}
 	}
 
 	public Type getType() {
@@ -54,6 +73,10 @@ public class Token {
 
 	public void setValue(String value) {
 		this.value = value;
+
+		if (!this.value.isEmpty() && this.type == NUM) {
+			this.numVal = Double.parseDouble(this.value);
+		}
 	}
 
 	public boolean isNum() {
@@ -107,9 +130,9 @@ public class Token {
 	@Override
 	public String toString() {
 		return "Token{" +
-				"value='" + value + '\'' +
-				", type=" + type +
-				'}';
+			   "value='" + value + '\'' +
+			   ", type=" + type +
+			   '}';
 	}
 
 	public int getLength() {
@@ -120,4 +143,26 @@ public class Token {
 		this.length = length;
 	}
 
+	public Double getNumVal() {
+		return numVal;
+	}
+
+	public void setNumVal(Double numVal) {
+		this.numVal = numVal;
+	}
+
+	public void negate() {
+		if (type == NUM && numVal != null) {
+			numVal *= -1;
+			value = String.valueOf(numVal);
+		}
+	}
+
+	public int getOrdinal() {
+		return ordinal;
+	}
+
+	public void setOrdinal(int ordinal) {
+		this.ordinal = ordinal;
+	}
 }

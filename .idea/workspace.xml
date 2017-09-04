@@ -24,6 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe8c002-a0f4-4507-818c-5ab1b1c9b3b2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -33,8 +34,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/TokenBuilder.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/TokenBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
     </list>
     <ignored path="GVcalc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +69,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="205" column="9" selection-start-line="205" selection-start-column="9" selection-end-line="205" selection-end-column="9" />
+            <state relative-caret-position="214">
+              <caret line="224" column="5" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
               <folding>
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
@@ -79,8 +78,48 @@
                 <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/TokenBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#564#565#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExampleUnitTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="99" column="9" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+              <folding>
+                <element signature="method#setupTokensDIV_1#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#setupTokensMULT_1#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#setupTokensMULT_2#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#setupTokensMULT_3#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#setupTokensDIV_3#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#setupTokensDIV_4#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#addToken#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#subtract_isCorrect1#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#ternaryOp_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#mult_isCorrect1#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#mult_isCorrect2#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#div_isCorrect1#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#parens1_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#parens2_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#parens3_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#parens4_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="method#opPrec_test1#0;class#ExampleUnitTest#0" expanded="false" />
+                <element signature="e#5102#5133#0" expanded="false" />
+                <element signature="method#opPrec_test2#0;class#ExampleUnitTest#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,9 +128,22 @@
       <file leaf-file-name="Token.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="142">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="method#Token#2;class#Token#0" expanded="false" />
+                <element signature="method#concat#0;class#Token#0" expanded="false" />
+                <element signature="method#prepend#0;class#Token#0" expanded="false" />
+                <element signature="method#setValue#0;class#Token#0" expanded="false" />
+                <element signature="method#isNum#0;class#Token#0" expanded="false" />
+                <element signature="method#isVar#0;class#Token#0" expanded="false" />
+                <element signature="method#isLeftParen#0;class#Token#0" expanded="false" />
+                <element signature="method#isRightParen#0;class#Token#0" expanded="false" />
+                <element signature="method#isOperator#0;class#Token#0" expanded="false" />
+                <element signature="method#isEmpty#0;class#Token#0" expanded="false" />
+                <element signature="method#toString#0;class#Token#0" expanded="false" />
+                <element signature="method#negate#0;class#Token#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +151,7 @@
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="306">
               <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding />
             </state>
@@ -1985,9 +2037,9 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/TokenBuilder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java" />
       </list>
     </option>
   </component>
@@ -2068,6 +2120,9 @@
             <id>GeneralC/C++</id>
           </State>
           <State>
+            <id>GeneralJava</id>
+          </State>
+          <State>
             <id>Groovy</id>
           </State>
           <State>
@@ -2146,6 +2201,11 @@
             <id>Visibility issuesJava</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -2156,7 +2216,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -2174,30 +2234,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GVcalc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GVcalc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GVcalc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="AndroidView">
         <subPane />
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane />
       </pane>
@@ -2329,11 +2368,32 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GVcalc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GVcalc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GVcalc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="Pixel_API_25" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ForgetMeNot/ForgetMeNot" />
@@ -2345,7 +2405,7 @@
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="extract.method.default.visibility" value="protected" />
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android JUnit.ExampleUnitTest">
     <configuration default="false" name="ExampleUnitTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2398,32 +2458,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ExampleUnitTest.parens3_isCorrect" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.vargo.geoff.gvcalc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="app" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.vargo.geoff.gvcalc" />
-      <option name="MAIN_CLASS_NAME" value="com.vargo.geoff.gvcalc.ExampleUnitTest" />
-      <option name="METHOD_NAME" value="parens3_isCorrect" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="ExampleUnitTest.opPrec_test1" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2463,6 +2497,32 @@
       <option name="PACKAGE_NAME" value="com.vargo.geoff.gvcalc" />
       <option name="MAIN_CLASS_NAME" value="com.vargo.geoff.gvcalc.ExampleUnitTest" />
       <option name="METHOD_NAME" value="opPrec_test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ExampleUnitTest.subtract_isCorrect1" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.vargo.geoff.gvcalc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="app" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.vargo.geoff.gvcalc" />
+      <option name="MAIN_CLASS_NAME" value="com.vargo.geoff.gvcalc.ExampleUnitTest" />
+      <option name="METHOD_NAME" value="subtract_isCorrect1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -2789,17 +2849,17 @@
       <item index="1" class="java.lang.String" itemvalue="Android JUnit.test in app" />
       <item index="2" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest" />
       <item index="3" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens4_isCorrect" />
-      <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens3_isCorrect" />
-      <item index="5" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
-      <item index="6" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test2" />
+      <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
+      <item index="5" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test2" />
+      <item index="6" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.subtract_isCorrect1" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest" />
-        <item index="1" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test2" />
-        <item index="2" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
-        <item index="3" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens4_isCorrect" />
-        <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens3_isCorrect" />
+        <item index="1" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.subtract_isCorrect1" />
+        <item index="2" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test2" />
+        <item index="3" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.opPrec_test1" />
+        <item index="4" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest.parens4_isCorrect" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -3027,27 +3087,31 @@
       <option name="project" value="LOCAL" />
       <updated>1504067617209</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="partially implemented negation.">
+      <created>1504154164255</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1504154164255</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExampleUnitTest - 2017.08.28 at 23h 21m 59s.xml">
+    <history-entry file="ExampleUnitTest - 2017.09.02 at 02h 14m 02s.xml">
       <configuration name="ExampleUnitTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest - 2017.08.29 at 13h 00m 37s.xml">
+    <history-entry file="ExampleUnitTest - 2017.09.02 at 02h 51m 29s.xml">
       <configuration name="ExampleUnitTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_opPrec_test1 - 2017.08.28 at 23h 20m 42s.xml">
-      <configuration name="ExampleUnitTest.opPrec_test1" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest - 2017.09.02 at 02h 51m 46s.xml">
+      <configuration name="ExampleUnitTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 16m 15s.xml">
-      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest - 2017.09.03 at 21h 50m 06s.xml">
+      <configuration name="ExampleUnitTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 18m 26s.xml">
-      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 19m 39s.xml">
-      <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
+    <history-entry file="ExampleUnitTest - 2017.09.04 at 01h 02m 28s.xml">
+      <configuration name="ExampleUnitTest" configurationId="AndroidJUnit" />
     </history-entry>
     <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 12h 37m 22s.xml">
       <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
@@ -3060,6 +3124,9 @@
     </history-entry>
     <history-entry file="ExampleUnitTest_opPrec_test2 - 2017.08.29 at 13h 41m 35s.xml">
       <configuration name="ExampleUnitTest.opPrec_test2" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ExampleUnitTest_subtract_isCorrect1 - 2017.09.02 at 02h 50m 11s.xml">
+      <configuration name="ExampleUnitTest.subtract_isCorrect1" configurationId="AndroidJUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -3081,13 +3148,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Breakpoints Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3293011" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252688" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32392472" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07005142" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4206989" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.608871" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -3104,6 +3170,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -3194,22 +3261,23 @@
     <MESSAGE value="Fixed issue with opPrec()." />
     <MESSAGE value="Fixed another  issue with opPrec()." />
     <MESSAGE value="implemented handler for pointBTN" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented handler for pointBTN" />
+    <MESSAGE value="partially implemented negation." />
+    <option name="LAST_COMMIT_MESSAGE" value="partially implemented negation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java</url>
-          <line>203</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java</url>
+          <line>48</line>
           <properties />
-          <option name="timeStamp" value="110" />
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="111" />
+      <option name="time" value="115" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -3228,6 +3296,53 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3094">
+          <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+          <folding>
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRightParenClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#Token#2;class#Token#0" expanded="false" />
+            <element signature="method#concat#0;class#Token#0" expanded="false" />
+            <element signature="method#prepend#0;class#Token#0" expanded="false" />
+            <element signature="method#setValue#0;class#Token#0" expanded="false" />
+            <element signature="method#isNum#0;class#Token#0" expanded="false" />
+            <element signature="method#isVar#0;class#Token#0" expanded="false" />
+            <element signature="method#isLeftParen#0;class#Token#0" expanded="false" />
+            <element signature="method#isRightParen#0;class#Token#0" expanded="false" />
+            <element signature="method#isOperator#0;class#Token#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Token#0" expanded="false" />
+            <element signature="method#toString#0;class#Token#0" expanded="false" />
+            <element signature="method#negate#0;class#Token#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
@@ -3237,8 +3352,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3254,8 +3367,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3282,8 +3393,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3310,8 +3419,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3345,8 +3452,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3380,8 +3485,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3422,8 +3525,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3457,8 +3558,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3492,8 +3591,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3520,8 +3617,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3548,8 +3643,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3576,8 +3669,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3674,25 +3765,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/TokenBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="306">
           <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding />
         </state>
@@ -3701,29 +3776,76 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/view/View.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#16254#16255#0" expanded="true" />
-            <element signature="e#16305#16306#0" expanded="true" />
+            <element signature="method#Token#2;class#Token#0" expanded="false" />
+            <element signature="method#concat#0;class#Token#0" expanded="false" />
+            <element signature="method#prepend#0;class#Token#0" expanded="false" />
+            <element signature="method#setValue#0;class#Token#0" expanded="false" />
+            <element signature="method#isNum#0;class#Token#0" expanded="false" />
+            <element signature="method#isVar#0;class#Token#0" expanded="false" />
+            <element signature="method#isLeftParen#0;class#Token#0" expanded="false" />
+            <element signature="method#isRightParen#0;class#Token#0" expanded="false" />
+            <element signature="method#isOperator#0;class#Token#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Token#0" expanded="false" />
+            <element signature="method#toString#0;class#Token#0" expanded="false" />
+            <element signature="method#negate#0;class#Token#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/TokenBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#564#565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/vargo/geoff/gvcalc/ExampleUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="99" column="9" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+          <folding>
+            <element signature="method#setupTokensDIV_1#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#setupTokensMULT_1#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#setupTokensMULT_2#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#setupTokensMULT_3#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#setupTokensDIV_3#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#setupTokensDIV_4#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#addToken#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#subtract_isCorrect1#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#ternaryOp_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#mult_isCorrect1#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#mult_isCorrect2#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#div_isCorrect1#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#parens1_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#parens2_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#parens3_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#parens4_isCorrect#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="method#opPrec_test1#0;class#ExampleUnitTest#0" expanded="false" />
+            <element signature="e#5102#5133#0" expanded="false" />
+            <element signature="method#opPrec_test2#0;class#ExampleUnitTest#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vargo/geoff/gvcalc/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="205" column="9" selection-start-line="205" selection-start-column="9" selection-end-line="205" selection-end-column="9" />
+        <state relative-caret-position="214">
+          <caret line="224" column="5" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
           <folding>
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onLeftParenClick#0;class#MainActivity#0" expanded="false" />
@@ -3731,8 +3853,6 @@
             <element signature="method#onEvalClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClearClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#opPrec#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calc#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#eval#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
