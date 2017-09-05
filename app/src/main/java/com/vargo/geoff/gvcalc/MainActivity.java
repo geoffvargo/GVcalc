@@ -55,52 +55,62 @@ public class MainActivity extends Activity {
 				tempStr = tempStr.concat("0");
 				currTok.concat("0");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length())));
+				updateDisplay();
 				break;
 			case R.id.oneBTN:
 				tempStr = tempStr.concat("1");
 				currTok.concat("1");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 			case R.id.twoBTN:
 				tempStr = tempStr.concat("2");
 				currTok.concat("2");
 //				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 
 				break;
 			case R.id.threeBTN:
 				tempStr = tempStr.concat("3");
 				currTok.concat("3");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 			case R.id.fourBTN:
 				tempStr = tempStr.concat("4");
 				currTok.concat("4");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 			case R.id.fiveBTN:
 				tempStr = tempStr.concat("5");
 				currTok.concat("5");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 			case R.id.sixBTN:
 				tempStr = tempStr.concat("6");
 				currTok.concat("6");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 			case R.id.sevenBTN:
 				tempStr = tempStr.concat("7");
 				currTok.concat("7");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 			case R.id.eightBTN:
 				tempStr = tempStr.concat("8");
 				currTok.concat("8");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 			case R.id.nineBTN:
 				tempStr = tempStr.concat("9");
 				currTok.concat("9");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				updateDisplay();
 				break;
 		}
 	}
@@ -121,18 +131,22 @@ public class MainActivity extends Activity {
 				case R.id.plusBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
+					updateDisplay();
 					break;
 				case R.id.minusBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
+					updateDisplay();
 					break;
 				case R.id.multiplyBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
+					updateDisplay();
 					break;
 				case R.id.divBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
+					updateDisplay();
 					break;
 			}
 		}
@@ -148,6 +162,7 @@ public class MainActivity extends Activity {
 		tempStr = tempStr.concat("(");
 		((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 		currTok.setValue("(");
+		updateDisplay();
 	}
 
 	public void onRightParenClick(View v) {
@@ -159,6 +174,7 @@ public class MainActivity extends Activity {
 		}
 		tempStr = tempStr.concat(")");
 		((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+		updateDisplay();
 		currTok.setValue(")");
 	}
 
@@ -176,6 +192,7 @@ public class MainActivity extends Activity {
 		tokens.clear();
 		currTok = new TokenBuilder().createToken();
 		((TextView) findViewById(R.id.dispTXT)).setText("");
+		updateDisplay();
 	}
 
 	public void onPointClick(View v) {
@@ -188,10 +205,12 @@ public class MainActivity extends Activity {
 				currTok.setValue("0.");
 			}
 			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+			updateDisplay();
 		} else {
 			tempStr = tempStr.concat(".");
 			currTok.concat(".");
 			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+			updateDisplay();
 		}
 	}
 
@@ -205,10 +224,12 @@ public class MainActivity extends Activity {
 				currTok.setValue("-0");
 			}
 //			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+			updateDisplay();
 		} else {
 			currTok.negate();
 			tempStr = new String("-" + tempStr);
 //			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+			updateDisplay();
 		}
 	}
 
@@ -311,6 +332,9 @@ public class MainActivity extends Activity {
 		return ans;
 	}
 
+	public void updateDisplay() {
+//		tokens.forEach();
+	}
 
 }
 

@@ -1,5 +1,7 @@
 package com.vargo.geoff.gvcalc;
 
+import android.content.Context;
+
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 
 /**
@@ -10,6 +12,7 @@ public class TokenBuilder {
 	private Type type = EMPTY;
 	private String value = "";
 	private int length = 0;
+	private Context context = null;
 
 	public TokenBuilder setType(Type type) {
 		this.type = type;
@@ -21,12 +24,17 @@ public class TokenBuilder {
 		return this;
 	}
 
+	public TokenBuilder setContext(Context context) {
+		this.context = context;
+		return this;
+	}
+
 	public TokenBuilder setLength(int length) {
 		this.length = length;
 		return this;
 	}
 
 	public Token createToken() {
-		return new Token(value, type, length);
+		return new Token(value, type, length, context);
 	}
 }

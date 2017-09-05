@@ -81,7 +81,9 @@ public class ExampleUnitTest {
 	}
 
 	protected boolean addToken(Type type, String value) {
-		return activity.tokens.add(tbuild.setType(type).setValue(value).createToken());
+		Token ans = tbuild.setType(type).setValue(value).setContext(activity).createToken();
+//		ans.
+		return activity.tokens.add(ans);
 	}
 
 	@Test
