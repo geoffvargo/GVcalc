@@ -12,9 +12,6 @@ import static com.vargo.geoff.gvcalc.Type.RIGHT_PAREN;
 import static com.vargo.geoff.gvcalc.Type.VAR;
 
 public class Token {
-	protected Context context = null;
-	protected MathView disp;
-	protected String latex = "";
 	private String value = "";
 	private Type type = EMPTY;
 	private int length = 0;
@@ -30,11 +27,10 @@ public class Token {
 		this.type = type;
 	}
 
-	public Token(String value, Type type, int length, Context context) {
+	public Token(String value, Type type, int length) {
 		this.value = value;
 		this.type = type;
 		this.length = length;
-		this.context = context;
 
 		if (this.type == NUM) {
 			if (!this.value.isEmpty()) {
@@ -44,25 +40,6 @@ public class Token {
 			}
 		}
 
-		if (this.context != null) {
-			disp = new MathView(this.context);
-		}
-	}
-
-	public String getLatex() {
-		return latex;
-	}
-
-	public void setLatex(String latex) {
-		this.latex = latex;
-	}
-
-	public Context getContext() {
-		return context;
-	}
-
-	public void setContext(Context context) {
-		this.context = context;
 	}
 
 	public void concat(String str) {
@@ -71,8 +48,6 @@ public class Token {
 			this.length++;
 
 			this.numVal = Double.parseDouble(this.value);
-			this.latex = this.value;
-			this.disp.setText(this.latex);
 		}
 	}
 
@@ -102,10 +77,6 @@ public class Token {
 
 		if (!this.value.isEmpty() && this.type == NUM) {
 			this.numVal = Double.parseDouble(this.value);
-			this.latex = this.value;
-			if (this.disp != null) {
-				this.disp.setText(this.latex);
-			}
 		}
 	}
 
