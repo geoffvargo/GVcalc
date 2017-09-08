@@ -25,67 +25,6 @@ public class ExampleUnitTest {
 	protected TokenBuilder tbuild = new TokenBuilder();
 	protected MainActivity activity = new MainActivity();
 
-	public void setupTokensDIV_1() {
-		addToken(NUM, "4");
-		addToken(OP, DIV);
-		addToken(NUM, "2");
-	}
-
-	public void setupTokensMULT_1() {
-		addToken(NUM, "3");
-		addToken(OP, MULT);
-		addToken(NUM, "3");
-		addToken(OP, MULT);
-		addToken(NUM, "3");
-	}
-
-	public void setupTokensMULT_2() {
-		addToken(NUM, "2");
-		addToken(OP, MULT);
-		addToken(NUM, "3");
-		addToken(OP, MULT);
-		addToken(NUM, "4");
-		addToken(OP, MULT);
-		addToken(NUM, "5");
-	}
-
-	public void setupTokensMULT_3() {
-		addToken(NUM, "2");
-		addToken(LEFT_PAREN, LPAREN);
-		addToken(NUM, "3");
-		addToken(OP, MULT);
-		addToken(NUM, "4");
-		addToken(OP, MULT);
-		addToken(NUM, "5");
-		addToken(RIGHT_PAREN, RPARN);
-	}
-
-	public void setupTokensDIV_3() {
-		addToken(LEFT_PAREN, LPAREN);
-		addToken(NUM, "1");
-		addToken(OP, "+");
-		addToken(NUM, "3");
-		addToken(RIGHT_PAREN, RPARN);
-		addToken(OP, DIV);
-		addToken(NUM, "2");
-	}
-
-	public void setupTokensDIV_4() {
-		addToken(NUM, "24");
-		addToken(OP, DIV);
-		addToken(LEFT_PAREN, LPAREN);
-		addToken(NUM, "2");
-		addToken(OP, MULT);
-		addToken(NUM, "3");
-		addToken(RIGHT_PAREN, RPARN);
-	}
-
-	protected boolean addToken(Type type, String value) {
-		Token ans = tbuild.setType(type).setValue(value).createToken();
-//		ans.
-		return activity.tokens.add(ans);
-	}
-
 	@Test
 	public void subtract_isCorrect1() {
 		addToken(NUM, "3");
@@ -94,9 +33,16 @@ public class ExampleUnitTest {
 
 		Token ans = activity.calc(activity.tokens);
 		Double rightAns = 2.0;
-		System.out.println(ans.getValue());
+		System.out.printf("value: %s\n", ans.getValue());
+		System.out.printf("latex: %s\n", ans.getLatex());
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
+	}
+
+	protected boolean addToken(Type type, String value) {
+		Token ans = tbuild.setType(type).setValue(value).createToken();
+//		ans.
+		return activity.tokens.add(ans);
 	}
 
 	@Test
@@ -124,14 +70,34 @@ public class ExampleUnitTest {
 		assertEquals(rightAns, actual);
 	}
 
+	public void setupTokensMULT_1() {
+		addToken(NUM, "3");
+		addToken(OP, MULT);
+		addToken(NUM, "3");
+		addToken(OP, MULT);
+		addToken(NUM, "3");
+	}
+
 	@Test
 	public void mult_isCorrect2() throws Exception {
 		setupTokensMULT_2();
 		Token ans = activity.calc(activity.tokens);
 		Double rightAns = 120.0;
-		System.out.println(ans.getValue());
+		System.out.printf("value: %s\n", ans.getValue());
+		System.out.printf("latex: %s\n", ans.getLatex());
+		;
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
+	}
+
+	public void setupTokensMULT_2() {
+		addToken(NUM, "2");
+		addToken(OP, MULT);
+		addToken(NUM, "3");
+		addToken(OP, MULT);
+		addToken(NUM, "4");
+		addToken(OP, MULT);
+		addToken(NUM, "5");
 	}
 
 	@Test
@@ -139,9 +105,17 @@ public class ExampleUnitTest {
 		setupTokensDIV_1();
 		Token ans = activity.calc(activity.tokens);
 		Double rightAns = 2.0;
-		System.out.println(ans.getValue());
+		System.out.printf("value: %s\n", ans.getValue());
+		System.out.printf("latex: %s\n", ans.getLatex());
+		;
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
+	}
+
+	public void setupTokensDIV_1() {
+		addToken(NUM, "4");
+		addToken(OP, DIV);
+		addToken(NUM, "2");
 	}
 
 	@Test
@@ -149,9 +123,22 @@ public class ExampleUnitTest {
 		setupTokensMULT_3();
 		Token ans = activity.calc(activity.tokens);
 		Double rightAns = 120.0;
-		System.out.println(ans.getValue());
+		System.out.printf("value: %s\n", ans.getValue());
+		System.out.printf("latex: %s\n", ans.getLatex());
+		;
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
+	}
+
+	public void setupTokensMULT_3() {
+		addToken(NUM, "2");
+		addToken(LEFT_PAREN, LPAREN);
+		addToken(NUM, "3");
+		addToken(OP, MULT);
+		addToken(NUM, "4");
+		addToken(OP, MULT);
+		addToken(NUM, "5");
+		addToken(RIGHT_PAREN, RPARN);
 	}
 
 	@Test
@@ -159,9 +146,21 @@ public class ExampleUnitTest {
 		setupTokensDIV_3();
 		Token ans = activity.calc(activity.tokens);
 		Double rightAns = 2.0;
-		System.out.println(ans.getValue());
+		System.out.printf("value: %s\n", ans.getValue());
+		System.out.printf("latex: %s\n", ans.getLatex());
+
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
+	}
+
+	public void setupTokensDIV_3() {
+		addToken(LEFT_PAREN, LPAREN);
+		addToken(NUM, "1");
+		addToken(OP, "+");
+		addToken(NUM, "3");
+		addToken(RIGHT_PAREN, RPARN);
+		addToken(OP, DIV);
+		addToken(NUM, "2");
 	}
 
 	@Test
@@ -169,9 +168,21 @@ public class ExampleUnitTest {
 		setupTokensDIV_4();
 		Token ans = activity.calc(activity.tokens);
 		Double rightAns = 4.0;
-		System.out.println(ans.getValue());
+		System.out.printf("value: %s\n", ans.getValue());
+		System.out.printf("latex: %s\n", ans.getLatex());
+
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
+	}
+
+	public void setupTokensDIV_4() {
+		addToken(NUM, "24");
+		addToken(OP, DIV);
+		addToken(LEFT_PAREN, LPAREN);
+		addToken(NUM, "2");
+		addToken(OP, MULT);
+		addToken(NUM, "3");
+		addToken(RIGHT_PAREN, RPARN);
 	}
 
 	@Test

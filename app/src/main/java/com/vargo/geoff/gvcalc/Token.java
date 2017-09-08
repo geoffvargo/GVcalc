@@ -1,9 +1,5 @@
 package com.vargo.geoff.gvcalc;
 
-import android.content.Context;
-
-import com.nishant.math.MathView;
-
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
 import static com.vargo.geoff.gvcalc.Type.NUM;
@@ -16,6 +12,7 @@ public class Token {
 	private Type type = EMPTY;
 	private int length = 0;
 	private Double numVal = null;
+	private String latex = "";
 	private int ordinal = -1;
 
 	public Token(Type type) {
@@ -34,12 +31,17 @@ public class Token {
 
 		if (this.type == NUM) {
 			if (!this.value.isEmpty()) {
-				this.numVal = 0.0;
+				this.numVal = Double.parseDouble(this.value);
+				this.latex = this.value;
 			} else {
-//				this.numVal = Double.parseDouble(this.value);
+				this.numVal = 0.0;
 			}
 		}
 
+	}
+
+	public void setLatex(String latex) {
+		this.latex = latex;
 	}
 
 	public void concat(String str) {
@@ -165,5 +167,9 @@ public class Token {
 
 	public void setOrdinal(int ordinal) {
 		this.ordinal = ordinal;
+	}
+
+	public String getLatex() {
+		return latex;
 	}
 }
