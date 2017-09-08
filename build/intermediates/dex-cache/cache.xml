@@ -83,6 +83,15 @@
         <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\pre-dexed\debug\classes_81eb689b34fcfbf29fc488f8af9a45052b81c82e.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="C:\Users\geoff\.android\build-cache\e3778d91aeec969b847ab62f34ebe1583237d153\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ec7851e7fff6d404c05287b784810a1fc9d0a15a">
+        <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_20ee2cf7da3566a2338af6e2599611fc8ec481e5\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\geoff\.android\build-cache\d6d24a6d34c115ae16bb35fc2be206551097eec8\output\jars\classes.jar"
         jumboMode="false"
@@ -106,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="6525097161452b023472efd5e98c3718fb491abb">
+        sha1="c98d92c21f2127f63939e9bc0cb274c89d88fd28">
         <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_93508c4058122ede81c710a8cc9b9a238921ce9a\classes.dex" />
     </item>
     <item

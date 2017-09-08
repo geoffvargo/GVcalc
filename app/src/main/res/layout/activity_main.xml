@@ -7,20 +7,40 @@
 	android:layout_height="match_parent"
 	tools:context=".MainActivity">
 
-	<ScrollView
+	<LinearLayout
 		android:id="@+id/calcDisplay"
+		android:layout_width="match_parent"
+		android:layout_height="350dp"
+		android:orientation="vertical"
+		app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"
+		app:layout_constraintLeft_toRightOf="parent"
+		app:layout_constraintRight_toLeftOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout_editor_absoluteX="8dp"
+		tools:layout_editor_absoluteY="8dp">
+		<TextView
+			android:id="@+id/dispTXT"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:textAlignment="textStart"
+			android:textSize="24sp"/>
+		<WebView
+			android:id="@+id/mathDISP"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"/>
+	</LinearLayout>
+<!--
+	<ScrollView
 		android:layout_width="wrap_content"
 		android:layout_height="350dp"
 		app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"
 		app:layout_constraintLeft_toRightOf="parent"
 		app:layout_constraintRight_toLeftOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
-		<TextView
-			android:id="@+id/dispTXT"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:textSize="24sp"/>
 	</ScrollView>
+-->
 	<TableLayout
 		android:id="@+id/calcKeyboard"
 		android:layout_width="wrap_content"

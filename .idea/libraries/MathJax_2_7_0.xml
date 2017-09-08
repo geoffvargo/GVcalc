@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MathJax-2.7.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.webjars/MathJax/2.7.0/5da6cdd37b09bb5f103ae36311ecfd9363c451ce/MathJax-2.7.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

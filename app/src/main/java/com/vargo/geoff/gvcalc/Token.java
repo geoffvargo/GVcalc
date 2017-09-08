@@ -49,7 +49,13 @@ public class Token {
 			this.value = this.value.concat(str);
 			this.length++;
 
+			this.latex = this.value;
 			this.numVal = Double.parseDouble(this.value);
+		} else if (type == OP) {
+			value = value.concat(str);
+			length++;
+
+			latex = value;
 		}
 	}
 
@@ -132,9 +138,9 @@ public class Token {
 
 	@Override
 	public String toString() {
-		return "Token{" +
-			   "value='" + value + '\'' +
+		return "Token{value='" + value + '\'' +
 			   ", type=" + type +
+			   ", latex='" + latex + '\'' +
 			   '}';
 	}
 

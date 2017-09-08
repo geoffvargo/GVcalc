@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayDeque;
+import java.util.Iterator;
 
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
@@ -15,24 +17,19 @@ import static com.vargo.geoff.gvcalc.Type.NUM;
 import static com.vargo.geoff.gvcalc.Type.OP;
 import static com.vargo.geoff.gvcalc.Type.RIGHT_PAREN;
 
-
 public class MainActivity extends Activity {
 
 	private static final String DIV = "÷";
 	private static final String MULT = "×";
 	private static final String LPAREN = "(";
 	private static final String RPARN = ")";
-
-	protected int currIndex = 0;
-
 	protected static ArrayDeque<Token> numStack = new ArrayDeque<>();
 	protected static ArrayDeque<Token> opStack = new ArrayDeque<>();
-
 	public ArrayDeque<Token> tokens = new ArrayDeque<>();
-
 	public TokenBuilder tokenBuilder = new TokenBuilder();
-
+	protected int currIndex = 0;
 	protected String tempStr = "";
+	protected String latexStr = "";
 	protected Token currTok = new TokenBuilder().setType(EMPTY).setValue("").createToken();
 
 	@Override
@@ -55,64 +52,79 @@ public class MainActivity extends Activity {
 				tempStr = tempStr.concat("0");
 				currTok.concat("0");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length())));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.oneBTN:
 				tempStr = tempStr.concat("1");
 				currTok.concat("1");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.twoBTN:
 				tempStr = tempStr.concat("2");
 				currTok.concat("2");
 //				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 
 				break;
 			case R.id.threeBTN:
 				tempStr = tempStr.concat("3");
 				currTok.concat("3");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.fourBTN:
 				tempStr = tempStr.concat("4");
 				currTok.concat("4");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.fiveBTN:
 				tempStr = tempStr.concat("5");
 				currTok.concat("5");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.sixBTN:
 				tempStr = tempStr.concat("6");
 				currTok.concat("6");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.sevenBTN:
 				tempStr = tempStr.concat("7");
 				currTok.concat("7");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.eightBTN:
 				tempStr = tempStr.concat("8");
 				currTok.concat("8");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 			case R.id.nineBTN:
 				tempStr = tempStr.concat("9");
 				currTok.concat("9");
 				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-				updateDisplay();
+//				updateDisplay();
 				break;
 		}
+	}
+
+	public void updateDisplay() {
+		WebView w = (WebView) findViewById(R.id.mathDISP);
+
+		for (Iterator<Token> iterator = tokens.iterator(); iterator.hasNext(); ) {
+			Token t = iterator.next();
+			latexStr.concat(t.getLatex() + " ");
+		}
+
+		w.loadUrl("javascript:document.getElementById('math').innerHTML='<math xmlns=\"http://www.w3.org/1998/Math/MathML\">"
+				  + "<mstyle displaystyle=\"true\">"
+				  + latexStr
+				  + "</mstyle></math>';");
+		w.loadUrl("javascript:MathJax.Hub.Queue(['Typeset',MathJax.Hub]);");
 	}
 
 	public void onOprClick(View v) {
@@ -131,22 +143,22 @@ public class MainActivity extends Activity {
 				case R.id.plusBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
-					updateDisplay();
+//					updateDisplay();
 					break;
 				case R.id.minusBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
-					updateDisplay();
+//					updateDisplay();
 					break;
 				case R.id.multiplyBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
-					updateDisplay();
+//					updateDisplay();
 					break;
 				case R.id.divBTN:
 					((TextView) findViewById(R.id.dispTXT)).append(curr.getText());
 					currTok.concat(String.valueOf(curr.getText()));
-					updateDisplay();
+//					updateDisplay();
 					break;
 			}
 		}
@@ -162,7 +174,7 @@ public class MainActivity extends Activity {
 		tempStr = tempStr.concat("(");
 		((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 		currTok.setValue("(");
-		updateDisplay();
+//		updateDisplay();
 	}
 
 	public void onRightParenClick(View v) {
@@ -174,7 +186,7 @@ public class MainActivity extends Activity {
 		}
 		tempStr = tempStr.concat(")");
 		((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-		updateDisplay();
+//		updateDisplay();
 		currTok.setValue(")");
 	}
 
@@ -182,66 +194,9 @@ public class MainActivity extends Activity {
 		if (!currTok.isEmpty() && !tokens.isEmpty()) {
 			tokens.add(currTok);
 			currTok = calc(tokens);
+			((TextView) findViewById(R.id.dispTXT)).setText(String.valueOf(currTok.getValue()));
 			tokens.clear();
 			tokens.add(currTok);
-			((TextView) findViewById(R.id.dispTXT)).setText(String.valueOf(currTok.getValue()));
-		}
-	}
-
-	public void onClearClick(View v) {
-		tokens.clear();
-		currTok = new TokenBuilder().createToken();
-		((TextView) findViewById(R.id.dispTXT)).setText("");
-		updateDisplay();
-	}
-
-	public void onPointClick(View v) {
-		if (tempStr.isEmpty() || currTok.isEmpty()) {
-			if (tempStr.isEmpty()) {
-				tempStr = tempStr.concat("0.");
-			}
-			if (currTok.isEmpty()) {
-				currTok.setType(NUM);
-				currTok.setValue("0.");
-			}
-			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-			updateDisplay();
-		} else {
-			tempStr = tempStr.concat(".");
-			currTok.concat(".");
-			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-			updateDisplay();
-		}
-	}
-
-	public void onNegClick(View v) {
-		if (tempStr.isEmpty() || currTok.isEmpty()) {
-			if (tempStr.isEmpty()) {
-				tempStr = "-";
-			}
-			if (currTok.isEmpty()) {
-				currTok.setType(NUM);
-				currTok.setValue("-0");
-			}
-//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-			updateDisplay();
-		} else {
-			currTok.negate();
-			tempStr = new String("-" + tempStr);
-//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-			updateDisplay();
-		}
-	}
-
-	public boolean opPrec(Token op1, Token op2) {
-		if (!op1.isOperator() || !op2.isOperator()) {
-			return false;
-		} else if (op2.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
-			return false;
-		} else if ((op1.getValue().matches(DIV) || op1.getValue().matches(MULT)) && (op2.getValue().matches("\\+") || op2.getValue().matches("-"))) {
-			return false;
-		} else {
-			return true;
 		}
 	}
 
@@ -304,6 +259,18 @@ public class MainActivity extends Activity {
 		return ans;
 	}
 
+	public boolean opPrec(Token op1, Token op2) {
+		if (!op1.isOperator() || !op2.isOperator()) {
+			return false;
+		} else if (op2.getValue().matches("\\(") || op2.getValue().matches("\\)")) {
+			return false;
+		} else if ((op1.getValue().matches(DIV) || op1.getValue().matches(MULT)) && (op2.getValue().matches("\\+") || op2.getValue().matches("-"))) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	public Token eval(Token op, Token num1, Token num2) throws IllegalArgumentException {
 		Token ans = new TokenBuilder().setType(NUM).createToken();
 		double val1 = Double.valueOf(num1.getValue());
@@ -332,8 +299,49 @@ public class MainActivity extends Activity {
 		return ans;
 	}
 
-	public void updateDisplay() {
-//		tokens.forEach();
+	public void onClearClick(View v) {
+		tokens.clear();
+		currTok = new TokenBuilder().createToken();
+		((TextView) findViewById(R.id.dispTXT)).setText("");
+//		updateDisplay();
+	}
+
+	public void onPointClick(View v) {
+		if (tempStr.isEmpty() || currTok.isEmpty()) {
+			if (tempStr.isEmpty()) {
+				tempStr = tempStr.concat("0.");
+			}
+			if (currTok.isEmpty()) {
+				currTok.setType(NUM);
+				currTok.setValue("0.");
+			}
+			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+//			updateDisplay();
+		} else {
+			tempStr = tempStr.concat(".");
+			currTok.concat(".");
+			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+//			updateDisplay();
+		}
+	}
+
+	public void onNegClick(View v) {
+		if (tempStr.isEmpty() || currTok.isEmpty()) {
+			if (tempStr.isEmpty()) {
+				tempStr = "-";
+			}
+			if (currTok.isEmpty()) {
+				currTok.setType(NUM);
+				currTok.setValue("-0");
+			}
+//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+//			updateDisplay();
+		} else {
+			currTok.negate();
+			tempStr = new String("-" + tempStr);
+//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+//			updateDisplay();
+		}
 	}
 
 }
