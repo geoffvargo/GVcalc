@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{textcomp}
+
+\begin{document}
+	
+	\begin{algorithm}
+		\caption{in-fix to post-fix conversion}
+		\label{shuntingYard}
+		\begin{algorithmic}[1]
+			\Function{shuntingYard}{\textit{tokenList}[]}
+			\While {tokenList.\textsc{isEmpty}() = FALSE}
+			\State {token $ \gets $ tokenList.\textsc{pop}();}
+				\If {token.\textsc{isNum}() = TRUE}
+					\State numStack.\textsc{push}(\textit{token.\textsc{getVal()}})
+				\ElsIf {token.\textsc{isVar}() = TRUE}
+					\State value $ \gets $ \textsc{getVar}(\textit{token})
+					\State numStack.\textsc{push}(\textit{value})
+				\ElsIf {token.\textsc{isLeftParen}() = TRUE}
+					\State opStack.\textsc{push}(\textit{token.\textsc{getVal}}())
+				\ElsIf {token.\textsc{isRightParen}() = TRUE}
+					\While {opStack.\textsc{peek}() $ \neq $ ` \texttt{(} '}
+						\State op $ \gets $ opStack.\textsc{pop}()
+						\State num1 $ \gets $ numStack.\textsc{pop}()
+						\State num2 $ \gets $ numStack.\textsc{pop}()
+						\State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
+						\State numStack.\textsc{push}(\textit{result})
+					\EndWhile
+					\State opStack.\textsc{pop}()
+				\ElsIf {token.\textsc{isOperator}() = TRUE}
+					\While {opStack.\textsc{isEmpty}() = FALSE \textbf{and} \textsc{opPrec}(\textit{opstack.}\textsc{peek()}\textit{, token}) $ \geq $ 0}
+						\State op $ \gets $ opStack.\textsc{pop}()
+						\State num1 $ \gets $ numStack.\textsc{pop}()
+						\State num2 $ \gets $ numStack.\textsc{pop}()
+						\State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
+						\State numStack.\textsc{push(\textit{result})}
+					\EndWhile
+					\State opStack.\textsc{push(\textit{token})}
+				\EndIf
+			\EndWhile
+			\While {opStack.\textsc{isEmpty()} = FALSE}
+				\State op $ \gets $ opStack.\textsc{pop}()
+				\State num1 $ \gets $ numStack.\textsc{pop}()
+				\State num2 $ \gets $ numStack.\textsc{pop}()
+				\State result $ \gets $ \textsc{eval}(\textit{op, num1, num2})
+				\State numStack.\textsc{push(\textit{result})}
+			\EndWhile
+			
+			\State \Return numStack.\textsc{pop()}
+			\EndFunction
+		\end{algorithmic}
+	\end{algorithm}
+\end{document}}

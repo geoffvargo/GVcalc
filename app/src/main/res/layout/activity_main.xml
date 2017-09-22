@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
 <android.support.constraint.ConstraintLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,188 +7,220 @@
 	android:layout_height="match_parent"
 	tools:context=".MainActivity">
 
-	<LinearLayout
+	<android.support.constraint.ConstraintLayout
 		android:id="@+id/calcDisplay"
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="350dp"
-		android:orientation="vertical"
-		app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"
-		app:layout_constraintLeft_toRightOf="parent"
-		app:layout_constraintRight_toLeftOf="parent"
+		android:clickable="false"
+		android:longClickable="false"
+		android:minHeight="179dp"
+		android:minWidth="50dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		tools:layout_editor_absoluteX="8dp"
-		tools:layout_editor_absoluteY="8dp">
+		app:layout_constraintVertical_bias="0.0">
+
+		<!--<io.github.kexanie.library.MathView-->
+		<!--android:layout_width="wrap_content"-->
+		<!--android:layout_height="wrap_content"-->
+		<!--app:engine="KaTeX"-->
+		<!--app:text="\\(c = \\pm\\sqrt{a^2 + b^2}\\)"-->
+		<!--android:layout_marginTop="8dp" />-->
 		<TextView
 			android:id="@+id/dispTXT"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:clickable="true"
+			android:linksClickable="true"
+			android:longClickable="true"
+			android:minHeight="50dp"
 			android:textAlignment="textStart"
-			android:textSize="24sp"/>
-		<WebView
-			android:id="@+id/mathDISP"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_weight="1"/>
-	</LinearLayout>
-<!--
-	<ScrollView
-		android:layout_width="wrap_content"
-		android:layout_height="350dp"
-		app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"
-		app:layout_constraintLeft_toRightOf="parent"
-		app:layout_constraintRight_toLeftOf="parent"
-		app:layout_constraintTop_toTopOf="parent">
-	</ScrollView>
--->
-	<TableLayout
-		android:id="@+id/calcKeyboard"
-		android:layout_width="wrap_content"
-		android:layout_height="0dp"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintLeft_toRightOf="parent"
-		app:layout_constraintRight_toLeftOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/calcDisplay">
+			android:textIsSelectable="true"
+			android:textSize="24sp"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"/>
+		<com.vargo.geoff.gvcalc.view.MathJaxWebView
+			android:id="@+id/formula_one"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:minHeight="50dp"
+			android:minWidth="100dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintDimensionRatio=""
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/dispTXT"/>
+	</android.support.constraint.ConstraintLayout>
+	<!--<LinearLayout-->
+	<!--android:id="@+id/calcDisplay"-->
+	<!--android:layout_width="300dp"-->
+	<!--android:layout_height="350dp"-->
+	<!--android:orientation="vertical"-->
+	<!--app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"-->
+	<!--app:layout_constraintLeft_toRightOf="parent"-->
+	<!--app:layout_constraintRight_toLeftOf="parent"-->
+	<!--app:layout_constraintTop_toTopOf="parent">-->
+	<!--</LinearLayout>-->
+	<!--
+		<ScrollView
+			android:layout_width="wrap_content"
+			android:layout_height="350dp"
+			app:layout_constraintBottom_toTopOf="@+id/calcKeyboard"
+			app:layout_constraintLeft_toRightOf="parent"
+			app:layout_constraintRight_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+		</ScrollView>
+	-->
+<TableLayout
+android:id="@+id/calcKeyboard"
+android:layout_width="wrap_content"
+android:layout_height="0dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toRightOf="parent"
+app:layout_constraintRight_toLeftOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/calcDisplay">
 
-		<TableRow
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-			<Button
-				android:id="@+id/sevenBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_7"/>
-			<Button
-				android:id="@+id/eightBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_8"/>
-			<Button
-				android:id="@+id/nineBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_9"/>
-			<Button
-				android:id="@+id/divBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onOprClick"
-				android:text="@string/div"/>
-		</TableRow>
-		<TableRow
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-			<Button
-				android:id="@+id/fourBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_4"/>
-			<Button
-				android:id="@+id/fiveBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_5"/>
-			<Button
-				android:id="@+id/sixBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_6"/>
-			<Button
-				android:id="@+id/multiplyBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onOprClick"
-				android:text="@string/multiply"/>
-		</TableRow>
-		<TableRow
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-			<Button
-				android:id="@+id/oneBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_1"/>
-			<Button
-				android:id="@+id/twoBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_2"/>
-			<Button
-				android:id="@+id/threeBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_3"/>
-			<Button
-				android:id="@+id/plusBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onOprClick"
-				android:text="@string/plus"/>
-		</TableRow>
-		<TableRow
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-			<Button
-				android:id="@+id/pointBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onPointClick"
-				android:text="@string/point"/>
-			<Button
-				android:id="@+id/zeroBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNumClick"
-				android:text="@string/_0"/>
-			<Button
-				android:id="@+id/negBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onNegClick"
-				android:text="@string/negTog"/>
-			<Button
-				android:id="@+id/minusBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onOprClick"
-				android:text="@string/minus"/>
-		</TableRow>
-		<TableRow
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-			<Button
-				android:id="@+id/openParenBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onLeftParenClick"
-				android:text="@string/openParen"/>
-			<Button
-				android:id="@+id/closeParenBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onRightParenClick"
-				android:text="@string/closeParen"/>
-			<Button
-				android:id="@+id/clearBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onClearClick"
-				android:text="@string/clear"/>
-			<Button
-				android:id="@+id/evalBTN"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:onClick="onEvalClick"
-				android:text="@string/eval"/>
-		</TableRow>
-	</TableLayout>
-</android.support.constraint.ConstraintLayout>
+<TableRow
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:id="@+id/sevenBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_7"/>
+	<Button
+		android:id="@+id/eightBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_8"/>
+	<Button
+		android:id="@+id/nineBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_9"/>
+	<Button
+		android:id="@+id/divBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onOprClick"
+		android:text="@string/div"/>
+</TableRow>
+<TableRow
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:id="@+id/fourBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_4"/>
+	<Button
+		android:id="@+id/fiveBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_5"/>
+	<Button
+		android:id="@+id/sixBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_6"/>
+	<Button
+		android:id="@+id/multiplyBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onOprClick"
+		android:text="@string/multiply"/>
+</TableRow>
+<TableRow
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:id="@+id/oneBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_1"/>
+	<Button
+		android:id="@+id/twoBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_2"/>
+	<Button
+		android:id="@+id/threeBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_3"/>
+	<Button
+		android:id="@+id/plusBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onOprClick"
+		android:text="@string/plus"/>
+</TableRow>
+<TableRow
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:id="@+id/pointBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onPointClick"
+		android:text="@string/point"/>
+	<Button
+		android:id="@+id/zeroBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNumClick"
+		android:text="@string/_0"/>
+	<Button
+		android:id="@+id/negBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onNegClick"
+		android:text="@string/negTog"/>
+	<Button
+		android:id="@+id/minusBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onOprClick"
+		android:text="@string/minus"/>
+</TableRow>
+<TableRow
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:id="@+id/openParenBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onLeftParenClick"
+		android:text="@string/openParen"/>
+	<Button
+		android:id="@+id/closeParenBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onRightParenClick"
+		android:text="@string/closeParen"/>
+	<Button
+		android:id="@+id/clearBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onClearClick"
+		android:text="@string/clear"/>
+	<Button
+		android:id="@+id/evalBTN"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="onEvalClick"
+		android:text="@string/eval"/>
+</TableRow>
+</TableLayout>
+	</android.support.constraint.ConstraintLayout>

@@ -29,6 +29,15 @@
         <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_f3a014b4f0df0b3c673b62a98572a495a8e7fd43.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="C:\Users\geoff\.android\build-cache\e5a1c4010e165cc67c353fc8ee5f5188eb02619c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="1c10aa76d7a604dd11acfd18e4b26cfe1d2a926b">
+        <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3798f14e368cab53a981e4338e9452a8e8d89bbc\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\geoff\.android\build-cache\161cc5a69db7b71e90485f7383302958b16022ed\output\jars\classes.jar"
         jumboMode="false"
@@ -108,6 +117,15 @@
         revision="26.0.0"
         sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
         <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\pre-dexed\debug\classes_9c482202ba1a1addec3405df1c29ff6e756b08ee.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\geoff\.android\build-cache\e5a1c4010e165cc67c353fc8ee5f5188eb02619c\output\jars\libs\chunk-templates-3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ac60a044eb6c8a3f77498b3ffaf9ada21df4c1bf">
+        <dex dex="C:\Users\geoff\Downloads\projects\GVcalc\app\build\intermediates\transforms\dex\debug\folders\1000\10\chunk-templates-3.0.1_0296621d4c2ab042d62bf053d2f6d158fe0821a1\classes.dex" />
     </item>
     <item
         is-multidex="true"

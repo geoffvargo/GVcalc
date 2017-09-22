@@ -2,8 +2,11 @@ package com.vargo.geoff.gvcalc;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +14,11 @@ import android.widget.TextView;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 
+import io.github.kexanie.library.MathView;
+import com.vargo.geoff.gvcalc.view.MathJaxWebView;
+
+import static android.content.ContentValues.TAG;
+import static com.vargo.geoff.gvcalc.R.id.formula_one;
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
 import static com.vargo.geoff.gvcalc.Type.NUM;
@@ -18,6 +26,10 @@ import static com.vargo.geoff.gvcalc.Type.OP;
 import static com.vargo.geoff.gvcalc.Type.RIGHT_PAREN;
 
 public class MainActivity extends Activity {
+
+	MathJaxWebView renderDisp;
+	String tex = " \\(ax^2 + bx + c = 0\\) " +
+				 "or displayed formula: $$\\sum_{i=0}^n i^2 = \\frac{(n^2+n)(2n+1)}{6}$$";
 
 	private static final String DIV = "÷";
 	private static final String MULT = "×";
@@ -37,9 +49,33 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
+
+		renderDisp = findViewById(R.id.formula_one);
+		renderDisp.getSettings().setJavaScriptEnabled(true);
+		renderDisp.setText(tex);
+/*		renderDisp = findViewById(R.id.formula_one);
+		renderDisp.setOnTouchListener(new View.OnTouchListener() {
+			@Override
+			public boolean onTouch(View view, MotionEvent m) {
+//				m.get
+//				formula_one.evaluateJavascript("(function(){return window.getSelection().toString()})()",
+//											   new ValueCallback<String>()
+//											   {
+//												   @Override
+//												   public void onReceiveValue(String value)
+//												   {
+//													   Log.v(TAG, "SELECTION:" + value);
+//												   }
+//											   });
+
+				return false;
+			}
+		});*/
 	}
 
 	public void onNumClick(View view) {
+		renderDisp = findViewById(formula_one);
+		renderDisp.setText(tex);
 		if (!currTok.isNum() && !currTok.isEmpty()) {
 			tokens.add(currTok);
 			currTok = new TokenBuilder().setType(NUM).createToken();
@@ -113,18 +149,31 @@ public class MainActivity extends Activity {
 	}
 
 	public void updateDisplay() {
-		WebView w = (WebView) findViewById(R.id.mathDISP);
+//		WebView w = (WebView) findViewById(R.id.mathDISP);
+//
+//		for (Iterator<Token> iterator = tokens.iterator(); iterator.hasNext(); ) {
+//			Token t = iterator.next();
+//			latexStr.concat(t.getLatex() + " ");
+//		}
+//
+//		w.loadUrl("javascript:document.getElementById('math').innerHTML='<math xmlns=\"http://www.w3.org/1998/Math/MathML\">"
+//				  + "<mstyle displaystyle=\"true\">"
+//				  + latexStr
+//				  + "</mstyle></math>';");
+//		w.loadUrl("javascript:MathJax.Hub.Queue(['Typeset',MathJax.Hub]);");
+		renderDisp = findViewById(formula_one);
+//		formula_one.config(
+//				"MathJax.Hub.Config({\n"+
+//				"  CommonHTML: { linebreaks: { automatic: true } },\n"+
+//				"  \"HTML-CSS\": { linebreaks: { automatic: true } },\n"+
+//				"         SVG: { linebreaks: { automatic: true } }\n"+
+//				"});");
+		renderDisp.setText(tex);
+	}
 
-		for (Iterator<Token> iterator = tokens.iterator(); iterator.hasNext(); ) {
-			Token t = iterator.next();
-			latexStr.concat(t.getLatex() + " ");
-		}
-
-		w.loadUrl("javascript:document.getElementById('math').innerHTML='<math xmlns=\"http://www.w3.org/1998/Math/MathML\">"
-				  + "<mstyle displaystyle=\"true\">"
-				  + latexStr
-				  + "</mstyle></math>';");
-		w.loadUrl("javascript:MathJax.Hub.Queue(['Typeset',MathJax.Hub]);");
+	public void onRenderClick(View v) {
+		int x = 1;
+		x += 1;
 	}
 
 	public void onOprClick(View v) {
