@@ -2,22 +2,15 @@ package com.vargo.geoff.gvcalc;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.webkit.ValueCallback;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayDeque;
-import java.util.Iterator;
-
-import io.github.kexanie.library.MathView;
 import com.vargo.geoff.gvcalc.view.MathJaxWebView;
 
-import static android.content.ContentValues.TAG;
+import java.util.ArrayDeque;
+
 import static com.vargo.geoff.gvcalc.R.id.formula_one;
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
@@ -26,10 +19,6 @@ import static com.vargo.geoff.gvcalc.Type.OP;
 import static com.vargo.geoff.gvcalc.Type.RIGHT_PAREN;
 
 public class MainActivity extends Activity {
-
-	MathJaxWebView renderDisp;
-	String tex = " \\(ax^2 + bx + c = 0\\) " +
-				 "or displayed formula: $$\\sum_{i=0}^n i^2 = \\frac{(n^2+n)(2n+1)}{6}$$";
 
 	private static final String DIV = "÷";
 	private static final String MULT = "×";
@@ -43,6 +32,9 @@ public class MainActivity extends Activity {
 	protected String tempStr = "";
 	protected String latexStr = "";
 	protected Token currTok = new TokenBuilder().setType(EMPTY).setValue("").createToken();
+	MathJaxWebView renderDisp;
+	String tex = " \\(ax^2 + bx + c = 0\\) " +
+				 "or displayed formula: $$\\sum_{i=0}^n i^2 = \\frac{(n^2+n)(2n+1)}{6}$$";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +79,7 @@ public class MainActivity extends Activity {
 			case R.id.zeroBTN:
 				tempStr = tempStr.concat("0");
 				currTok.concat("0");
-				display.append(String.valueOf(tempStr.charAt(tempStr.length())));
+				display.append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 //				updateDisplay();
 				break;
 			case R.id.oneBTN:
@@ -99,7 +91,7 @@ public class MainActivity extends Activity {
 			case R.id.twoBTN:
 				tempStr = tempStr.concat("2");
 				currTok.concat("2");
-//				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
+				((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 //				updateDisplay();
 
 				break;

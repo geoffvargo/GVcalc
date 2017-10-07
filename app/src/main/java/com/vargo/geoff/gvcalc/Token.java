@@ -50,7 +50,11 @@ public class Token {
 			this.length++;
 
 			this.latex = this.value;
-			this.numVal = Double.parseDouble(this.value);
+			if (!str.matches(".")) {
+				this.numVal = Double.parseDouble(this.value);
+			} else {
+//				this.numVal.
+			}
 		} else if (type == OP) {
 			value = value.concat(str);
 			length++;
