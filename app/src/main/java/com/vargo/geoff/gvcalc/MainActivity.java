@@ -175,7 +175,9 @@ public class MainActivity extends Activity {
 			if (!currTok.isOperator() && !currTok.isEmpty()) {
 				currTok.setOrdinal(currIndex);
 				currIndex++;
-				tokens.add(currTok);
+				if (tokens.isEmpty() || tokens.peekLast().isOperator()) {
+					tokens.add(currTok);
+				}
 				currTok = new TokenBuilder().setType(OP).setValue("").createToken();
 			} else if (currTok.isEmpty()) {
 				currTok.setType(OP);
@@ -351,8 +353,13 @@ public class MainActivity extends Activity {
 		if (tempStr.isEmpty() || currTok.isEmpty()) {
 			if (tempStr.isEmpty()) {
 				tempStr = tempStr.concat("0.");
-			}
-			if (currTok.isEmpty()) {
+				if (currTok.isEmpty()) {
+					currTok.setType(NUM);
+				}
+				currTok.setValue("0");
+				currTok.setIsFractional(true);
+
+			} else if (currTok.isEmpty()) {
 				currTok.setType(NUM);
 				currTok.setValue("0.");
 			}
@@ -360,7 +367,8 @@ public class MainActivity extends Activity {
 //			updateDisplay();
 		} else {
 			tempStr = tempStr.concat(".");
-			currTok.concat(".");
+			currTok.setIsFractional(true);
+//			currTok.concat(".0");
 			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
 //			updateDisplay();
 		}

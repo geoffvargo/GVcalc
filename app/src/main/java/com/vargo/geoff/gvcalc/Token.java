@@ -1,5 +1,7 @@
 package com.vargo.geoff.gvcalc;
 
+import android.util.Log;
+
 import static com.vargo.geoff.gvcalc.Type.EMPTY;
 import static com.vargo.geoff.gvcalc.Type.LEFT_PAREN;
 import static com.vargo.geoff.gvcalc.Type.NUM;
@@ -8,6 +10,9 @@ import static com.vargo.geoff.gvcalc.Type.RIGHT_PAREN;
 import static com.vargo.geoff.gvcalc.Type.VAR;
 
 public class Token {
+	protected Boolean isFractional = false;
+	protected Double fraction = 0.0;
+	protected Double divider = 0.1;
 	private String value = "";
 	private Type type = EMPTY;
 	private int length = 0;
@@ -40,20 +45,38 @@ public class Token {
 
 	}
 
+	public void setIsFractional(Boolean fractional) {
+		isFractional = fractional;
+	}
+
+	public Double getFraction() {
+		return fraction;
+	}
+
+	public void setFraction(Double fraction) {
+		this.fraction = fraction;
+	}
+
 	public void setLatex(String latex) {
 		this.latex = latex;
 	}
 
 	public void concat(String str) {
 		if (this.type == NUM) {
-			this.value = this.value.concat(str);
-			this.length++;
-
-			this.latex = this.value;
-			if (!str.matches(".")) {
+			if (!this.getIsFractional()) {
+				this.value = this.value.concat(str);
+				this.length++;
+				this.latex = this.value;
 				this.numVal = Double.parseDouble(this.value);
+				Log.d("this.numVal = ", this.numVal.toString());
 			} else {
-//				this.numVal.
+				this.value = this.value.concat("." + str);
+				this.length++;
+				this.latex = this.value;
+				this.numVal = Double.parseDouble(this.value);
+//				this.fraction = this.divider * Double.parseDouble(str);
+//				this.numVal += this.fraction;
+				Log.d("this.numVal = ", this.numVal.toString());
 			}
 		} else if (type == OP) {
 			value = value.concat(str);
@@ -61,6 +84,10 @@ public class Token {
 
 			latex = value;
 		}
+	}
+
+	public Boolean getIsFractional() {
+		return isFractional;
 	}
 
 	public void prepend(String str) {
@@ -76,6 +103,10 @@ public class Token {
 		return this.type;
 	}
 
+	/**
+	 * Sets the type of Token to that provided by the parameter.
+	 * @param type
+	 */
 	public void setType(Type type) {
 		this.type = type;
 	}
@@ -84,6 +115,10 @@ public class Token {
 		return value;
 	}
 
+	/**
+	 * Sets the Token to the numerical value of the String parameter
+	 * @param value number (in String form) to be assigned to this token
+	 */
 	public void setValue(String value) {
 		this.value = value;
 
@@ -145,6 +180,7 @@ public class Token {
 		return "Token{value='" + value + '\'' +
 			   ", type=" + type +
 			   ", latex='" + latex + '\'' +
+			   ", numVal=" + numVal +
 			   '}';
 	}
 

@@ -25,6 +25,11 @@ public class ExampleUnitTest {
 	protected TokenBuilder tbuild = new TokenBuilder();
 	protected MainActivity activity = new MainActivity();
 
+	protected boolean addToken(Type type, String value) {
+		Token ans = tbuild.setType(type).setValue(value).createToken();
+		return activity.tokens.add(ans);
+	}
+
 	@Test
 	public void subtract_isCorrect1() {
 		addToken(NUM, "3");
@@ -37,12 +42,6 @@ public class ExampleUnitTest {
 		System.out.printf("latex: %s\n", ans.getLatex());
 		Double actual = Double.parseDouble(ans.getValue());
 		assertEquals(rightAns, actual);
-	}
-
-	protected boolean addToken(Type type, String value) {
-		Token ans = tbuild.setType(type).setValue(value).createToken();
-//		ans.
-		return activity.tokens.add(ans);
 	}
 
 	@Test
