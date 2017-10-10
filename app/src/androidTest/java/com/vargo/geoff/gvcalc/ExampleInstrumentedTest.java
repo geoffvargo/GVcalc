@@ -91,7 +91,7 @@ public class ExampleInstrumentedTest {
 		onView(withId(R.id.evalBTN)).perform(click());
 //		System.out.print(activityTestRule.getActivity().currTok.toString());
 		Log.i("pressButtonFOUR", activityTestRule.getActivity().currTok.toString());
-		Double ans = 11.7;
+		Double ans = 10.92;
 		assertEquals(ans, activityTestRule.getActivity().currTok.getNumVal());
 	}
 }

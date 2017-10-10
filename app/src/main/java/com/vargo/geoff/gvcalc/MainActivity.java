@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.vargo.geoff.gvcalc.view.MathJaxWebView;
 
+import java.math.BigDecimal;
 import java.util.ArrayDeque;
 
 import static com.vargo.geoff.gvcalc.R.id.formula_one;
@@ -316,25 +317,25 @@ public class MainActivity extends Activity {
 
 	public Token eval(Token op, Token num1, Token num2) throws IllegalArgumentException {
 		Token ans = new TokenBuilder().setType(NUM).createToken();
-		double val1 = Double.valueOf(num1.getValue());
-		double val2 = Double.valueOf(num2.getValue());
+		BigDecimal val1 = BigDecimal.valueOf(Double.valueOf(num1.getValue()));
+		BigDecimal val2 = BigDecimal.valueOf(Double.valueOf(num2.getValue()));
 
 		String opVal = op.getValue();
 		switch (opVal) {
 			case "-":
-				ans.setValue(String.valueOf(val1 - val2));
+				ans.setValue(val1.subtract(val2).toPlainString());
 				return ans;
 			case "+":
-				ans.setValue(String.valueOf(val1 + val2));
+				ans.setValue(val1.add(val2).toPlainString());
 				return ans;
 			case "÷":
-				if (val2 == 0.0) {
+				if (val2.doubleValue() == 0.0) {
 					throw new IllegalArgumentException();
 				}
-				ans.setValue(String.valueOf(val1 / val2));
+				ans.setValue(val1.divide(val2).toPlainString());
 				return ans;
 			case "×":
-				ans.setValue(String.valueOf(val1 * val2));
+				ans.setValue(val1.multiply(val2).toPlainString());
 				return ans;
 
 		}
