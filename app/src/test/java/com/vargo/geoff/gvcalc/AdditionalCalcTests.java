@@ -48,6 +48,11 @@ public class AdditionalCalcTests {
 		assertEquals(rightAns, actual);
 	}
 
+	@Test
+	public void negateTestONE() throws Exception {
+
+	}
+
 	@After
 	public void tearDown() throws Exception {
 

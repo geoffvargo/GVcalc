@@ -94,4 +94,37 @@ public class ExampleInstrumentedTest {
 		Double ans = 10.92;
 		assertEquals(ans, activityTestRule.getActivity().currTok.getNumVal());
 	}
+
+	@Test
+	public void negateButtonONE() throws Exception {
+		onView(withId(R.id.oneBTN)).perform(click());
+		onView(withId(R.id.negBTN)).perform(click());
+		onView(withId(R.id.plusBTN)).perform(click());
+		onView(withId(R.id.zeroBTN)).perform(click());
+		onView(withId(R.id.evalBTN)).perform(click());
+		Double ans = -1.0;
+		assertEquals(ans, activityTestRule.getActivity().currTok.getNumVal());
+	}
+
+	@Test
+	public void negateButtonTWO() throws Exception {
+		onView(withId(R.id.twoBTN)).perform(click());
+		onView(withId(R.id.twoBTN)).perform(click());
+		onView(withId(R.id.negBTN)).perform(click());
+		onView(withId(R.id.evalBTN)).perform(click());
+		Double ans = -22.0;
+		assertEquals(ans, activityTestRule.getActivity().currTok.getNumVal());
+	}
+
+	@Test
+	public void negateButtonTHREE() throws Exception {
+		onView(withId(R.id.twoBTN)).perform(click());
+		onView(withId(R.id.twoBTN)).perform(click());
+		onView(withId(R.id.negBTN)).perform(click());
+		onView(withId(R.id.plusBTN)).perform(click());
+		onView(withId(R.id.oneBTN)).perform(click());
+		onView(withId(R.id.evalBTN)).perform(click());
+		Double ans = -21.0;
+		assertEquals(ans, activityTestRule.getActivity().currTok.getNumVal());
+	}
 }

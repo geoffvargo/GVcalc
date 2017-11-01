@@ -11,6 +11,7 @@ import static com.vargo.geoff.gvcalc.Type.VAR;
 
 public class Token {
 	protected Boolean isFractional = false;
+	protected Boolean isNegative = false;
 	protected Double fraction = 0.0;
 	protected Double divider = 0.1;
 	private String value = "";
@@ -19,22 +20,21 @@ public class Token {
 	private Double numVal = null;
 	private String latex = "";
 	private int ordinal = -1;
-
 	public Token(Type type) {
 		this.type = type;
 	}
-
 	public Token(String value, Type type) {
 		this.value = value;
 		this.type = type;
 	}
 
-	public Token(String value, Type type, int length) {
+	public Token(String value, Type type, int length, Boolean neg) {
 		this.value = value;
 		this.type = type;
 		this.length = length;
 
 		if (this.type == NUM) {
+			this.isNegative = neg;
 			if (!this.value.isEmpty()) {
 				this.numVal = Double.parseDouble(this.value);
 				this.latex = this.value;
@@ -43,6 +43,14 @@ public class Token {
 			}
 		}
 
+	}
+
+	public Boolean getNegative() {
+		return isNegative;
+	}
+
+	public void setNegative(Boolean negative) {
+		isNegative = negative;
 	}
 
 	public void setIsFractional(Boolean fractional) {
@@ -105,6 +113,7 @@ public class Token {
 
 	/**
 	 * Sets the type of Token to that provided by the parameter.
+	 *
 	 * @param type
 	 */
 	public void setType(Type type) {
@@ -117,7 +126,9 @@ public class Token {
 
 	/**
 	 * Sets the Token to the numerical value of the String parameter
-	 * @param value number (in String form) to be assigned to this token
+	 *
+	 * @param value
+	 * 		number (in String form) to be assigned to this token
 	 */
 	public void setValue(String value) {
 		this.value = value;

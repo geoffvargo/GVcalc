@@ -242,6 +242,20 @@ public class MainActivity extends Activity {
 			tokens.clear();
 			tokens.add(currTok);
 		}
+		else if (!currTok.isEmpty()) {
+			currTok = parseNeg(currTok);
+		}
+	}
+
+	private Token parseNeg(Token token) {
+		if (token.getNegative()) {
+			BigDecimal val = BigDecimal.valueOf(Double.valueOf(token.getValue()));
+			val = val.negate();
+			token.setNegative(false);
+			token.setNumVal(val.doubleValue());
+		}
+
+		return token;
 	}
 
 	public Token calc(ArrayDeque<Token> tokenList) {
@@ -317,8 +331,22 @@ public class MainActivity extends Activity {
 
 	public Token eval(Token op, Token num1, Token num2) throws IllegalArgumentException {
 		Token ans = new TokenBuilder().setType(NUM).createToken();
-		BigDecimal val1 = BigDecimal.valueOf(Double.valueOf(num1.getValue()));
-		BigDecimal val2 = BigDecimal.valueOf(Double.valueOf(num2.getValue()));
+
+		BigDecimal val1;
+		if (!num1.getNegative()) {
+			val1 = BigDecimal.valueOf(Double.valueOf(num1.getValue()));
+		} else {
+			val1 = BigDecimal.valueOf(Double.valueOf(num1.getValue()));
+			val1 = val1.negate();
+		}
+
+		BigDecimal val2;
+		if (!num2.getNegative()) {
+			val2 = BigDecimal.valueOf(Double.valueOf(num2.getValue()));
+		} else {
+			val2 = BigDecimal.valueOf(Double.valueOf(num2.getValue()));
+			val2.negate();
+		}
 
 		String opVal = op.getValue();
 		switch (opVal) {
@@ -376,21 +404,13 @@ public class MainActivity extends Activity {
 	}
 
 	public void onNegClick(View v) {
-		if (tempStr.isEmpty() || currTok.isEmpty()) {
-			if (tempStr.isEmpty()) {
-				tempStr = "-";
+		if (!tempStr.isEmpty() && !currTok.isEmpty() && currTok.isNum()) {
+			tempStr = "-" + tempStr;
+			if (!currTok.getNegative()) {
+				currTok.setNegative(true);
+			} else {
+				currTok.setNegative(false);
 			}
-			if (currTok.isEmpty()) {
-				currTok.setType(NUM);
-				currTok.setValue("-0");
-			}
-//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-//			updateDisplay();
-		} else {
-			currTok.negate();
-			tempStr = new String("-" + tempStr);
-//			((TextView) findViewById(R.id.dispTXT)).append(String.valueOf(tempStr.charAt(tempStr.length() - 1)));
-//			updateDisplay();
 		}
 	}
 
