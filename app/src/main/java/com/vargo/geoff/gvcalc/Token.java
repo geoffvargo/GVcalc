@@ -51,6 +51,10 @@ public class Token {
 
 	public void setNegative(Boolean negative) {
 		isNegative = negative;
+		if (negative) {
+			value = "-" + value;
+			numVal = 0 - numVal;
+		}
 	}
 
 	public void setIsFractional(Boolean fractional) {

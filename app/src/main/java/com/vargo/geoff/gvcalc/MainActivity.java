@@ -243,7 +243,7 @@ public class MainActivity extends Activity {
 			tokens.add(currTok);
 		}
 		else if (!currTok.isEmpty()) {
-			currTok = parseNeg(currTok);
+//			currTok = parseNeg(currTok);
 		}
 	}
 
@@ -337,7 +337,7 @@ public class MainActivity extends Activity {
 			val1 = BigDecimal.valueOf(Double.valueOf(num1.getValue()));
 		} else {
 			val1 = BigDecimal.valueOf(Double.valueOf(num1.getValue()));
-			val1 = val1.negate();
+//			val1 = val1.negate();
 		}
 
 		BigDecimal val2;
@@ -345,7 +345,7 @@ public class MainActivity extends Activity {
 			val2 = BigDecimal.valueOf(Double.valueOf(num2.getValue()));
 		} else {
 			val2 = BigDecimal.valueOf(Double.valueOf(num2.getValue()));
-			val2.negate();
+//			val2.negate();
 		}
 
 		String opVal = op.getValue();
@@ -408,6 +408,7 @@ public class MainActivity extends Activity {
 			tempStr = "-" + tempStr;
 			if (!currTok.getNegative()) {
 				currTok.setNegative(true);
+//				int pos = currTok
 			} else {
 				currTok.setNegative(false);
 			}
