@@ -33,6 +33,7 @@ android {
 
 repositories {
     maven { url 'https://jitpack.io' }
+    maven { url 'https://dl.bintray.com/milaptank/SpannableTextView' }
     google()
 }
 
@@ -57,4 +58,5 @@ dependencies {
     compile 'com.github.Nishant-Pathak:MathView:v1.1'
     testCompile 'junit:junit:4.12'
     compile 'org.webjars:MathJax:2.7.0'
+    compile 'com.milaptank:stv:1.0.0'
 }

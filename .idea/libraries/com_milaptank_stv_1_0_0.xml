@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.milaptank:stv-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/stv-1.0.0.aar/dbe86d2b569a52a8cdf4e7f6ecab15d3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/stv-1.0.0.aar/dbe86d2b569a52a8cdf4e7f6ecab15d3/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.milaptank/stv/1.0.0/46d76a9e24ad112e32bf0e9eb0f71d84ed773fa5/stv-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -193,9 +193,9 @@ public class Token {
 	@Override
 	public String toString() {
 		return "Token{value='" + value + '\'' +
-			   ", type=" + type +
-			   ", latex='" + latex + '\'' +
-			   ", numVal=" + numVal +
+//			   ", type=" + type +
+//			   ", latex='" + latex + '\'' +
+//			   ", numVal=" + numVal +
 			   '}';
 	}
 

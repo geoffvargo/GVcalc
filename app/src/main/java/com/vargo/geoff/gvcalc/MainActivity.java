@@ -176,7 +176,7 @@ public class MainActivity extends Activity {
 			if (!currTok.isOperator() && !currTok.isEmpty()) {
 				currTok.setOrdinal(currIndex);
 				currIndex++;
-				if (tokens.isEmpty() || tokens.peekLast().isOperator()) {
+				if (tokens.isEmpty() || tokens.peekLast().isOperator() || tokens.peekLast().isLeftParen() || tokens.peekLast().isRightParen()) {
 					tokens.add(currTok);
 				}
 				currTok = new TokenBuilder().setType(OP).setValue("").createToken();
@@ -406,11 +406,19 @@ public class MainActivity extends Activity {
 	public void onNegClick(View v) {
 		if (!tempStr.isEmpty() && !currTok.isEmpty() && currTok.isNum()) {
 			tempStr = "-" + tempStr;
-			if (!currTok.getNegative()) {
-				currTok.setNegative(true);
-//				int pos = currTok
+			if (tokens.isEmpty()) {
+				if (!currTok.getNegative()) {
+					currTok.setNegative(true);
+	//				int pos = currTok
+				} else {
+					currTok.setNegative(false);
+				}
 			} else {
-				currTok.setNegative(false);
+				if (!currTok.isEmpty()) {
+					tokens.add(currTok);
+				}
+				currTok = calc(tokens);
+				currTok.setNegative(true);
 			}
 		}
 	}
