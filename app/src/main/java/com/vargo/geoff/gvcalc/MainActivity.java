@@ -7,6 +7,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.mpt.android.stv.Slice;
+import com.mpt.android.stv.SpannableTextView;
 import com.vargo.geoff.gvcalc.view.MathJaxWebView;
 
 import java.math.BigDecimal;
@@ -33,6 +35,7 @@ public class MainActivity extends Activity {
 	protected String tempStr = "";
 	protected String latexStr = "";
 	protected Token currTok = new TokenBuilder().setType(EMPTY).setValue("").createToken();
+	protected SpannableTextView spanny;
 	MathJaxWebView renderDisp;
 	String tex = " \\(ax^2 + bx + c = 0\\) " +
 				 "or displayed formula: $$\\sum_{i=0}^n i^2 = \\frac{(n^2+n)(2n+1)}{6}$$";
@@ -42,6 +45,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
+
+		spanny = findViewById(R.id.spanny);
+		spanny.addSlice(new Slice.Builder("asdf").build());
+		spanny.display();
+		spanny.addSlice(new Slice.Builder("1").build());
+		spanny.display();
 
 		renderDisp = findViewById(R.id.formula_one);
 		renderDisp.getSettings().setJavaScriptEnabled(true);

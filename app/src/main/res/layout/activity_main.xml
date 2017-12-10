@@ -54,6 +54,12 @@
 			app:layout_constraintRight_toRightOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/dispTXT"
 			android:layout_marginBottom="8dp"/>
+		<com.mpt.android.stv.SpannableTextView
+			android:id="@+id/spanny"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="TextView"
+			app:layout_constraintTop_toBottomOf="@id/formula_one"/>
 	</android.support.constraint.ConstraintLayout>
 	<!--<LinearLayout-->
 	<!--android:id="@+id/calcDisplay"-->
